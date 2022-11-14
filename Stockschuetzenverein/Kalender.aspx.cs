@@ -27,6 +27,7 @@ namespace Stockschuetzenverein
         {
             calendar_1.SelectedDate = datum;
             
+            
 
             
 
