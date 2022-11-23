@@ -9,22 +9,21 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Comic Sans MS" Font-Size="12pt" ForeColor="Black" Height="343px" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" Width="771px" EnableTheming="True" SelectedDate="11/14/2022 11:59:24">
-                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
-                <DayStyle BackColor="#CCCCCC" />
-                <NextPrevStyle Font-Bold="True" Font-Size="12pt" ForeColor="White" />
+            <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="1px" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" Width="350px" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+              OnDayRender="calendar_1_DayRender" ShowGridLines="True"
+                >
+                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                 <OtherMonthDayStyle ForeColor="#999999" />
                 <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
-                <TodayDayStyle BackColor="#999999" ForeColor="White" />
+                <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderColor="Black" BorderWidth="4px" />
+                <TodayDayStyle BackColor="#CCCCCC" />
             </asp:Calendar>
             <br />
             <br />
-            <asp:Label ID="lbl_terminBetreff" runat="server" Text="Terminbetreff: "></asp:Label>
-            <asp:TextBox ID="txt_terminBetreff" runat="server"  Width="440px"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btn_terminAnlegen" runat="server" OnClick="btn_terminAnlegen_Click" Text="Termin anlegen" />
+
         </div>
     </form>
 </body>
