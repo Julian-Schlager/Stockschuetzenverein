@@ -12,4 +12,6 @@
     * Cloudstorage Preise pro Jahr (48,96€, 99€, 189€ )
 
 * Webhost Plus (https://www.ipax.at/webhosting/webhost-plus/#accordeonstart )
+![Webhost-plus](WebhostPlus.png)
 * Cloud Storage (https://www.ipax.at/webhosting/cloud-speicher-mieten/ )
+![Cloud-Storage](Cloudstorage.png)
