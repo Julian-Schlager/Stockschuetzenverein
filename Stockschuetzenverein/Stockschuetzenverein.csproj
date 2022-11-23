@@ -64,7 +64,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Design_TerminDetailAnsicht.css" />
     <Content Include="Kalender.aspx" />
+    <Content Include="TerminDetailAnsicht.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +78,13 @@
       <DependentUpon>Kalender.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerminDetailAnsicht.aspx.cs">
+      <DependentUpon>TerminDetailAnsicht.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TerminDetailAnsicht.aspx.designer.cs">
+      <DependentUpon>TerminDetailAnsicht.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
