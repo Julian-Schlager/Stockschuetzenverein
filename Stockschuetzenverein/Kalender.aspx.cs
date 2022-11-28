@@ -21,10 +21,11 @@ namespace Stockschuetzenverein
         string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
 
-        DataTable AppointmentList;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             
+
             Panel.Visible = false;
             OKButton.Visible = false;
 
@@ -78,7 +79,7 @@ namespace Stockschuetzenverein
             dt.Columns.Add("Desc");
             dt.Rows.Add("01/November/2022", "party time");
             dt.Rows.Add("23/November/2022", "I luv swp");
-         
+            
 
 
             return dt;
@@ -86,11 +87,11 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
+            Panel.Visible = true;
             if(Panel.Visible == true)
             {
                 calendar_1.Enabled = false;
             }
-            Panel.Visible = true;
             OKButton.Visible = true;
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
@@ -114,6 +115,7 @@ namespace Stockschuetzenverein
         {
             Panel.Visible = false;
             OKButton.Visible = false;
+            calendar_1.Enabled = true;
         }
     }
 }

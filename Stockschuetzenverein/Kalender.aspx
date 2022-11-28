@@ -6,15 +6,8 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            height: 24px;
-            width: 519px;
-        }
-        .auto-style2 {
-            width: 84px;
-        }
-        .auto-style3 {
-            width: 519px;
+        .auto-style4 {
+            height: 6px;
         }
     </style>
 </head>
@@ -36,13 +29,13 @@
 
             <br />
             <asp:Panel ID="Panel" runat="server" Width="500px">
-            <table>
-                <tr> <td class="auto-style1"> Datum: <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <table class="auto-style4">
+               <%-- <tr> <td class="auto-style1"> Datum: <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                     </td></tr>
                 <tr> <td class="auto-style3"> Name: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                     </td></tr>
                 <tr> <td class="auto-style3"> Beschreibung: <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                    </td></tr>
+                    </td></tr>--%>
                   
                 
                 
