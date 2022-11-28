@@ -31,10 +31,11 @@ namespace Stockschuetzenverein
 
             // Ein kleiner test für dynamisches Label und Tabelle
             Label guteLabel = new Label();
-            guteLabel.Text = "Hi was geht?";
-            guteDivId.Controls.Add(guteLabel);
+            guteLabel.Text = "<br>Hi was geht?";
+            
 
-           
+            Panel.Controls.Add(guteLabel);
+            
             
             
 
