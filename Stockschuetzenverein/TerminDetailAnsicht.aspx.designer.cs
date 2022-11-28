@@ -42,6 +42,15 @@ namespace Stockschuetzenverein
         protected global::System.Web.UI.WebControls.Button btn_addPictures;
 
         /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+
+        /// <summary>
         /// btn_editEntry control.
         /// </summary>
         /// <remarks>
