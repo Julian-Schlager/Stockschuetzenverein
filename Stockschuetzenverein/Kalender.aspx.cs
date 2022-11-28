@@ -27,6 +27,14 @@ namespace Stockschuetzenverein
             
             Panel.Visible = false;
             OKButton.Visible = false;
+
+            // Ein kleiner test für dynamisches Label
+            Label guteLabel = new Label();
+            guteLabel.Text = "Hi was geht?";
+            guteId.Controls.Add(guteLabel);
+            
+            
+
             if (!IsPostBack)
             {
                 Calendar calendar = new Calendar();
