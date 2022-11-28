@@ -25,6 +25,7 @@ namespace Stockschuetzenverein
         protected void Page_Load(object sender, EventArgs e)
         {
             
+
             Panel.Visible = false;
             OKButton.Visible = false;
 
@@ -84,11 +85,11 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
+            Panel.Visible = true;
             if(Panel.Visible == true)
             {
                 calendar_1.Enabled = false;
             }
-            Panel.Visible = true;
             OKButton.Visible = true;
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
@@ -112,6 +113,7 @@ namespace Stockschuetzenverein
         {
             Panel.Visible = false;
             OKButton.Visible = false;
+            calendar_1.Enabled = true;
         }
     }
 }

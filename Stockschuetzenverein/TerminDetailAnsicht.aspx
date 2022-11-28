@@ -14,13 +14,11 @@
             <asp:LinkButton ID="btn_return" runat="server" ForeColor="Black"><i class="material-icons">arrow_back</i></asp:LinkButton>
         </div>
         <div class ="taskbarRight">
-            
             <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black"><i class="material-icons">add</i></asp:LinkButton>
             <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black"><i class="material-icons">edit</i></asp:LinkButton>
             <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
-
         </div>
-        <table>
+        <table class ="dataTable">
             <tr>
                 <td>Name:</td>
                 <td><asp:Label ID="lbl_entryName" runat="server" Text="Label"></asp:Label></td>
