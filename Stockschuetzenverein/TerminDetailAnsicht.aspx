@@ -6,19 +6,19 @@
 <head runat="server">
     <title></title>
     <link href="Design_TerminDetailAnsicht.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class ="returnButton">
-            <asp:Button ID="btn_return" runat="server" Text="Zurück zum Kalender" />
+            <asp:LinkButton ID="btn_return" runat="server" ForeColor="Black"><i class="material-icons">arrow_back</i></asp:LinkButton>
         </div>
         <div class ="taskbarRight">
-            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen" />
-            <asp:LinkButton ID="LinkButton1" runat="server"><i></i>LinkButton</asp:LinkButton>
-            <asp:Button ID="btn_editEntry" runat="server" Text="Fotos Hinzufügen"/>
-            <asp:Button ID="btn_deleteEntry" runat="server" Text="Fotos Hinzufügen"/>
+            <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black"><i class="material-icons">add</i></asp:LinkButton>
+            <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black"><i class="material-icons">edit</i></asp:LinkButton>
+            <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
         </div>
-        <table>
+        <table class ="dataTable">
             <tr>
                 <td>Name:</td>
                 <td><asp:Label ID="lbl_entryName" runat="server" Text="Label"></asp:Label></td>
@@ -30,12 +30,16 @@
                 <td><asp:Label ID="lbl_entryDateTo" runat="server" Text="Label"></asp:Label></td>
             </tr>
             <tr>
+                <td>Uhrzeit:</td>
+                <td><asp:Label ID="lbl_timefrom" runat="server" Text="Label"></asp:Label></td>
+                <td> - </td>
+                <td><asp:Label ID="lbl_timeto" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+            <tr>
                 <td>Beschreibung:</td>
                 <td><asp:Label ID="lbl_description" runat="server" Text="Label"></asp:Label></td>
             </tr>
         </table>
-
-        
     </form>
 </body>
 </html>
