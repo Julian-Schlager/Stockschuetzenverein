@@ -47,7 +47,7 @@ namespace Stockschuetzenverein
             dt.Columns.Add("Date");
             dt.Columns.Add("Desc");
             dt.Rows.Add("01/November/2022", "party time");
-            dt.Rows.Add("23/November/2022", "fuck swp");
+            dt.Rows.Add("23/November/2022", "I luv swp");
          
 
 
