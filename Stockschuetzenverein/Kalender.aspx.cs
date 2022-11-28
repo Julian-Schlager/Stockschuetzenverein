@@ -9,6 +9,9 @@ namespace Stockschuetzenverein
 {
     public partial class Kalender : System.Web.UI.Page
     {
+        string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
