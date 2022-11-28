@@ -24,15 +24,16 @@ namespace Stockschuetzenverein
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
             Panel.Visible = false;
             OKButton.Visible = false;
 
-            // Ein kleiner test für dynamisches Label
+            // Ein kleiner test für dynamisches Label und Tabelle
             Label guteLabel = new Label();
-            guteLabel.Text = "Hi was geht?";
-            guteId.Controls.Add(guteLabel);
+            guteLabel.Text = "<br>Hi was geht?";
+            
+
+            Panel.Controls.Add(guteLabel);
+            
             
             
 
