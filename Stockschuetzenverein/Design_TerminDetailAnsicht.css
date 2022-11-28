@@ -3,9 +3,10 @@
 }
 
 .returnButton{
-    
+   
 }
 
 .taskbarRight {
-    
+    float: right;
+    height: 25px;
 }

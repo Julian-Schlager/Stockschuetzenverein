@@ -16,6 +16,22 @@
             <asp:Button ID="btn_editEntry" runat="server" Text="Fotos Hinzufügen"/>
             <asp:Button ID="btn_deleteEntry" runat="server" Text="Fotos Hinzufügen"/>
         </div>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><asp:Label ID="lbl_entryName" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+            <tr>
+                <td>Datum:</td>
+                <td><asp:Label ID="lbl_entryDateFrom" runat="server" Text="Label"></asp:Label></td>
+                <td> - </td>
+                <td><asp:Label ID="lbl_entryDateTo" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+            <tr>
+                <td>Beschreibung:</td>
+                <td><asp:Label ID="lbl_description" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
