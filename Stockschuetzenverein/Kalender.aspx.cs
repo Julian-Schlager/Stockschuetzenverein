@@ -11,13 +11,13 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Collections;
 using System.Web.Configuration;
+using System.Data.Odbc;
 
 namespace Stockschuetzenverein
 {
     public partial class Kalender : System.Web.UI.Page
     {
-        
-        // Datenbank und so Jungs, alles auf mein Nacken -Lugas
+        // Datenbankdaten, alles auf mein Nacken Jungs - Lugas
         string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
 
@@ -27,16 +27,42 @@ namespace Stockschuetzenverein
             
             Panel.Visible = false;
             OKButton.Visible = false;
+
+            // Ein kleiner test für dynamisches Label
+            Label guteLabel = new Label();
+            guteLabel.Text = "Hi was geht?";
+            guteId.Controls.Add(guteLabel);
+            
+            
+
             if (!IsPostBack)
             {
                 Calendar calendar = new Calendar();
+                //Try2Connect();
             }
              DataTable dt = GetAppointments();
 
-            
-            
         }
-        
+
+        private void Try2Connect()
+        {
+
+            OdbcConnection conn = new OdbcConnection(connStrg);
+            try
+            {
+                conn.Open();
+                //lbConnection.Text = "db connection ok";
+            }
+            catch (Exception ex)
+            {
+                //lbConnection.Text = "cannot connect to database: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         void AddTermin(string terminText,DateTime datum)
         {
             
