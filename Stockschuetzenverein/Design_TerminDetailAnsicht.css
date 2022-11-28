@@ -1,23 +1,15 @@
-﻿.buttonTaskBar{
-
+﻿.returnButton{
+    float:left;
 }
 
-.returnButton{
-   
-}
-
-.taskbarRight {
+.buttonsRight {
     float: right;
 }
 
-table{
-
-}
-
-tr{
-
+.table {
+    
 }
 
 td{
-
+    text-align:right;
 }
