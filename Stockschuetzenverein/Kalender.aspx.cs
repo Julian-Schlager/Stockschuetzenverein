@@ -24,8 +24,6 @@ namespace Stockschuetzenverein
        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
             Panel.Visible = false;
             OKButton.Visible = false;
 
