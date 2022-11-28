@@ -32,9 +32,13 @@ namespace Stockschuetzenverein
             // Ein kleiner test für dynamisches Label und Tabelle
             Label guteLabel = new Label();
             guteLabel.Text = "<br>Hi was geht?";
-            
-
             Panel.Controls.Add(guteLabel);
+
+            DataTable Ldt = new DataTable();
+            Ldt.Columns.Add("Name");
+            Ldt.Columns.Add("Zeit");
+            Ldt.Rows.Add("Test", "11:55");
+            FillPanelWithDate(Ldt);
             
             
             
@@ -46,6 +50,22 @@ namespace Stockschuetzenverein
             }
              DataTable dt = GetAppointments();
 
+        }
+
+        private void FillPanelWithDate(DataTable NameAndTime)
+        {
+            LinkButton name = new LinkButton();
+            Label time = new Label();
+            foreach(DataRow Row in NameAndTime.Rows)
+            {
+                name.Text ="<br>" +  Row[0].ToString();
+                //name.OnClientClick = "Response.Redirect(\"TerminDetailAnsicht.aspx\");";
+                name.OnClientClick = "name.Text = time.Text";
+                time.Text = " um " + Row[1].ToString();
+
+                Panel.Controls.Add(name);
+                Panel.Controls.Add(time);
+            }
         }
 
         private void Try2Connect()
