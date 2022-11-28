@@ -15,6 +15,10 @@ namespace Stockschuetzenverein
 {
     public partial class Kalender : System.Web.UI.Page
     {
+        // Datenbank und so Jungs, alles auf mein Nacken -Lugas
+        string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
+
         DataTable AppointmentList;
         protected void Page_Load(object sender, EventArgs e)
         {
