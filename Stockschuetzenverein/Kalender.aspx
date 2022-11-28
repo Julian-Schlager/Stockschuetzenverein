@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="Design_Kalender.css"/>
     <title></title>
     <style type="text/css">
         .auto-style4 {
@@ -14,8 +15,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="1px" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
-              OnDayRender="calendar_1_DayRender" ShowGridLines="True" 
+            <div class ="calendar">
+                
+                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="1px" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+                OnDayRender="calendar_1_DayRender" ShowGridLines="True" 
                 >
                 
                 <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -25,6 +28,8 @@
                 <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderColor="Black" BorderWidth="4px" />
                 <TodayDayStyle BackColor="#CCCCCC" />
             </asp:Calendar>
+            </div>
+            
             <br />
 
             <br />

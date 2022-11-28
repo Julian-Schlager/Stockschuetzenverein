@@ -86,10 +86,8 @@ namespace Stockschuetzenverein
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
             Panel.Visible = true;
-            if(Panel.Visible == true)
-            {
-                calendar_1.Enabled = false;
-            }
+            calendar_1.Enabled = false;
+
             OKButton.Visible = true;
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)

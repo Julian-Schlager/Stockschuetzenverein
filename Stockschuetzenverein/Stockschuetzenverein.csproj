@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Design_Kalender.css" />
     <Content Include="Design_TerminDetailAnsicht.css" />
     <Content Include="Kalender.aspx" />
     <Content Include="TerminDetailAnsicht.aspx" />
