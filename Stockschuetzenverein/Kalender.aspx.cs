@@ -21,7 +21,7 @@ namespace Stockschuetzenverein
         string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
 
-        DataTable AppointmentList;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -68,7 +68,7 @@ namespace Stockschuetzenverein
             dt.Columns.Add("Desc");
             dt.Rows.Add("01/November/2022", "party time");
             dt.Rows.Add("23/November/2022", "I luv swp");
-         
+            
 
 
             return dt;
