@@ -27,7 +27,6 @@
             </asp:Calendar>
             <br />
 
-            <br />
             <asp:Panel ID="Panel" runat="server" Width="500px">
             <table class="auto-style4">
                <%-- <tr> <td class="auto-style1"> Datum: <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
@@ -42,15 +41,12 @@
             </table><br />
  <asp:Button ID="OKButton" runat="server" Text="Close" OnClick="OKButton_Click" />
 </asp:Panel>
+
+            <br />
             <br />
             <br />
 
         </div>
-        <div id="guteId" runat="server">
-
-        </div>
-        <p>
-            &nbsp;</p>
     </form>
 </body>
 </html>
