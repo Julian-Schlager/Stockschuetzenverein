@@ -78,12 +78,12 @@ namespace Stockschuetzenverein
         protected global::System.Web.UI.WebControls.Button OKButton;
 
         /// <summary>
-        /// guteId control.
+        /// guteDivId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl guteId;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl guteDivId;
     }
 }
