@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Design_TerminDetailAnsicht.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,7 +13,8 @@
             <asp:Button ID="btn_return" runat="server" Text="Zurück zum Kalender" />
         </div>
         <div class ="taskbarRight">
-            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen"/>
+            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen" />
+            <asp:LinkButton ID="LinkButton1" runat="server"><i></i>LinkButton</asp:LinkButton>
             <asp:Button ID="btn_editEntry" runat="server" Text="Fotos Hinzufügen"/>
             <asp:Button ID="btn_deleteEntry" runat="server" Text="Fotos Hinzufügen"/>
         </div>
@@ -32,6 +34,8 @@
                 <td><asp:Label ID="lbl_description" runat="server" Text="Label"></asp:Label></td>
             </tr>
         </table>
+
+        
     </form>
 </body>
 </html>
