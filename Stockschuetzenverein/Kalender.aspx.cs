@@ -15,19 +15,20 @@ namespace Stockschuetzenverein
 {
     public partial class Kalender : System.Web.UI.Page
     {
-        DataTable AppointmentList;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            
+            Panel.Visible = false;
+            OKButton.Visible = false;
+            if (!IsPostBack)
             {
                 Calendar calendar = new Calendar();
             }
-            AppointmentList = GetAppointments();
+             DataTable dt = GetAppointments();
 
-           
             
             
-
         }
         
         void AddTermin(string terminText,DateTime datum)
@@ -51,24 +52,34 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "openWin", "window.open('Kalender.aspx','_blank');", true);
+            if(Panel.Visible == true)
+            {
+                calendar_1.Enabled = false;
+            }
+            Panel.Visible = true;
+            OKButton.Visible = true;
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
         {
-            DataTable dt = GetAppointments();
 
-            foreach(DataRow row in dt.Rows)
-            {
-                if(Convert.ToDateTime(e.Day.Date) == Convert.ToDateTime(row["Date"]))
-                {
-                    e.Cell.Controls.Add(new Label { Text = "<br/" });
-                    e.Cell.Controls.Add(new Label { Text = row["Desc"].ToString() });
-                }
-            }
+            //DataTable dt = GetAppointments();
+
+            //foreach(DataRow row in dt.Rows)
+            //{
+            //    if(Convert.ToDateTime(e.Day.Date) == Convert.ToDateTime(row["Date"]))
+            //    {
+            //        e.Cell.Controls.Add(new Label { Text = "<br/" });
+            //        e.Cell.Controls.Add(new Label { Text = row["Desc"].ToString() });
+            //    }
+            //}
 
             
         }
 
-
+        protected void OKButton_Click(object sender, EventArgs e)
+        {
+            Panel.Visible = false;
+            OKButton.Visible = false;
+        }
     }
 }
