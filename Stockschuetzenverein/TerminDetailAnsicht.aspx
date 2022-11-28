@@ -8,10 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class = "buttonTaskBar">
+        <div>
             <asp:Button ID="btn_return" runat="server" Text="Zurück zum Kalender" class ="returnButton"/>
 
-            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen" />
+            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen" class ="TaskbarLeft"/>
 
         </div>
     </form>
