@@ -10,12 +10,18 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Collections;
+using System.Web.Configuration;
 
 namespace Stockschuetzenverein
 {
     public partial class Kalender : System.Web.UI.Page
     {
         
+        // Datenbank und so Jungs, alles auf mein Nacken -Lugas
+        string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
+
+        DataTable AppointmentList;
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -43,7 +49,7 @@ namespace Stockschuetzenverein
             dt.Columns.Add("Date");
             dt.Columns.Add("Desc");
             dt.Rows.Add("01/November/2022", "party time");
-            dt.Rows.Add("23/November/2022", "fuck swp");
+            dt.Rows.Add("23/November/2022", "I luv swp");
          
 
 
