@@ -51,7 +51,7 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
-            
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "openWin", "window.open('Kalender.aspx','_blank');", true);
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
         {
@@ -65,6 +65,8 @@ namespace Stockschuetzenverein
                     e.Cell.Controls.Add(new Label { Text = row["Desc"].ToString() });
                 }
             }
+
+            
         }
 
 
