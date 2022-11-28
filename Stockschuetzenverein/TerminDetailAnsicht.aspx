@@ -8,11 +8,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Button ID="btn_return" runat="server" Text="Zurück zum Kalender" class ="returnButton"/>
-
-            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen" class ="TaskbarLeft"/>
-
+        <div class ="returnButton">
+            <asp:Button ID="btn_return" runat="server" Text="Zurück zum Kalender" />
+        </div>
+        <div class ="taskbarRight">
+            <asp:Button ID="btn_addPictures" runat="server" Text="Fotos Hinzufügen"/>
+            <asp:Button ID="btn_editEntry" runat="server" Text="Fotos Hinzufügen"/>
+            <asp:Button ID="btn_deleteEntry" runat="server" Text="Fotos Hinzufügen"/>
         </div>
     </form>
 </body>
