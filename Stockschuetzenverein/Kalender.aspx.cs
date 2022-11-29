@@ -28,9 +28,9 @@ namespace Stockschuetzenverein
             OKButton.Visible = false;
 
             // Ein kleiner test für dynamisches Label und Tabelle
-            Label guteLabel = new Label();
-            guteLabel.Text = "<br>Hi was geht?";
-            Panel.Controls.Add(guteLabel);
+            //Label guteLabel = new Label();
+            //guteLabel.Text = "<br>Hi was geht?";
+            //Panel.Controls.Add(guteLabel);
 
             DataTable Ldt = new DataTable();
             Ldt.Columns.Add("Name");
