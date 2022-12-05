@@ -100,7 +100,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\02.5_AbsVerbReg_GRUG\DataBaseWrapper\DataBaseWrapper.csproj">
+    <ProjectReference Include="..\DataBaseWrapper\DataBaseWrapper.csproj">
       <Project>{81e5165d-979d-40d0-8935-b7cc82df26fb}</Project>
       <Name>DataBaseWrapper</Name>
     </ProjectReference>

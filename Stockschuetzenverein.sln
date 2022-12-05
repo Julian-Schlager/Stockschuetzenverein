@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stockschuetzenverein", "Stockschuetzenverein\Stockschuetzenverein.csproj", "{FCFE0278-39D1-48E5-97BD-FF732D4C35D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseWrapper", "..\..\02.5_AbsVerbReg_GRUG\DataBaseWrapper\DataBaseWrapper.csproj", "{81E5165D-979D-40D0-8935-B7CC82DF26FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseWrapper", "DataBaseWrapper\DataBaseWrapper.csproj", "{81E5165D-979D-40D0-8935-B7CC82DF26FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
