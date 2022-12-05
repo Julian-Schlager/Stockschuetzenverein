@@ -140,17 +140,14 @@ namespace Stockschuetzenverein
         protected void btn_saveChanges_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase(connStrg);
-            DateTime.TryParse(txt_dateFrom.Text,out DateTime dateFrom);
-            DateTime.TryParse(txt_dateTo.Text,out DateTime dateTo);
+            DateTime.TryParse($"{txt_dateFrom.Text} {txt_timeFrom.Text}",out DateTime dateTimeFrom);
+            DateTime.TryParse($"{txt_dateTo.Text} {txt_timeTo.Text}",out DateTime dateTimeTo);
+          
 
-            DateTime.TryParse(txt_timeFrom.Text, out DateTime TimeFrom);
-            DateTime.TryParse(txt_timeTo.Text, out DateTime TimeTo);
-
-            DateTime dateTimeFrom = new DateTime();
-            DateTime dateTimeTo = new DateTime();
-
-            string sqlCmd = $"Insert Into ssv_date Values(51,'{txt_entryName.Text}',{dateTimeFrom.ToString("yyyy-MM-dd HH:mm:ss")},{dateTimeTo.ToString("yyyy-MM-dd HH:mm:ss")},{txt_description.Text},'1')";
+            string sqlCmd = $"Insert Into ssv_date Values(51,'{txt_entryName.Text}','{dateTimeFrom.ToString("yyyy-MM-dd HH:mm:ss")}','{dateTimeTo.ToString("yyyy-MM-dd HH:mm:ss")}','{txt_description.Text}','101')";
             db.RunNonQuery(sqlCmd);
         }
+
+        
     }
 }
