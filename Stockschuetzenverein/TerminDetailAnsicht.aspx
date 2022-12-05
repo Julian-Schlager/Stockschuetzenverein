@@ -17,7 +17,7 @@
                 <asp:LinkButton ID="btn_return" runat="server" ForeColor="Black" OnClick="btn_return_Click"><i class="material-icons">arrow_back</i></asp:LinkButton>
             </div>
             <div class="buttonsRight">
-                <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black"><i class="material-icons">add</i></asp:LinkButton>
+                <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True" ><i class="material-icons">add</i></asp:LinkButton>
                 <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black"><i class="material-icons">edit</i></asp:LinkButton>
                 <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
             </div>
@@ -54,10 +54,6 @@
             </table>
             <br />
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button>
 
         <!-- Modal -->
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
