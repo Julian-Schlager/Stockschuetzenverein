@@ -17,57 +17,42 @@
                 <asp:LinkButton ID="btn_return" runat="server" ForeColor="Black" OnClick="btn_return_Click"><i class="material-icons">arrow_back</i></asp:LinkButton>
             </div>
             <div class="buttonsRight">
-                <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True" ><i class="material-icons">add</i></asp:LinkButton>
-                <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black"><i class="material-icons">edit</i></asp:LinkButton>
+                <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
+                <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">edit</i></asp:LinkButton>
                 <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
             </div>
         </div>
         <br />
-        <div class="table">
-            <table>
-                <tr>
-                    <td>Name:</td>
-                    <td>
-                        <asp:Label ID="lbl_entryName" runat="server" Text="Label"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td>Datum:</td>
-                    <td>
-                        <asp:Label ID="lbl_entryDateFrom" runat="server" Text="Label"></asp:Label></td>
-                    <td>- </td>
-                    <td>
-                        <asp:Label ID="lbl_entryDateTo" runat="server" Text="Label"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td>Uhrzeit:</td>
-                    <td>
-                        <asp:Label ID="lbl_timefrom" runat="server" Text="Label"></asp:Label></td>
-                    <td>- </td>
-                    <td>
-                        <asp:Label ID="lbl_timeto" runat="server" Text="Label"></asp:Label></td>
-                </tr>
-                <tr>
-                    <td>Beschreibung:</td>
-                    <td>
-                        <asp:Label ID="lbl_description" runat="server" Text="Label"></asp:Label></td>
-                </tr>
-            </table>
-            <br />
+        <div>
+            
         </div>
 
         <!-- Modal -->
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Termin Bearbeiten</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Termin Name" aria-label="Termin Name" aria-describedby="basic-addon1" value="Test" />
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Datum Von" aria-label="Datum Von" aria-describedby="basic-addon1" />
+                            <input type="text" class="form-control" placeholder="Datum Bis" aria-label="Datum Bis" aria-describedby="basic-addon1" />
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Uhrzeit Von" aria-label="Uhrzeit Von" aria-describedby="basic-addon1" />
+                            <input type="text" class="form-control" placeholder="Uhrzeit Bis" aria-label="Uhrzeit Bis" aria-describedby="basic-addon1" />
+                        </div>
+                        <div class="input-group">
+                            <textarea type="text" class="form-control" placeholder="Termin Beschreibung" aria-label="Termin Beschreibung" aria-describedby="basic-addon1"></textarea>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>

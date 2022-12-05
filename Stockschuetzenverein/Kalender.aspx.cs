@@ -12,6 +12,8 @@ using System.Xml.Linq;
 using System.Collections;
 using System.Web.Configuration;
 using System.Data.Odbc;
+using DataBaseWrapper;
+using System.Globalization;
 
 namespace Stockschuetzenverein
 {
@@ -43,7 +45,7 @@ namespace Stockschuetzenverein
 
             if (!IsPostBack)
             {
-                Calendar calendar = new Calendar();
+                System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 //Try2Connect();
             }
              DataTable dt = GetAppointments();
@@ -133,6 +135,22 @@ namespace Stockschuetzenverein
             Panel.Visible = false;
             OKButton.Visible = false;
             calendar_1.Enabled = true;
+        }
+
+        protected void btn_saveChanges_Click(object sender, EventArgs e)
+        {
+            DataBase db = new DataBase(connStrg);
+            DateTime.TryParse(txt_dateFrom.Text,out DateTime dateFrom);
+            DateTime.TryParse(txt_dateTo.Text,out DateTime dateTo);
+
+            DateTime.TryParse(txt_timeFrom.Text, out DateTime TimeFrom);
+            DateTime.TryParse(txt_timeTo.Text, out DateTime TimeTo);
+
+            DateTime dateTimeFrom = new DateTime();
+            DateTime dateTimeTo = new DateTime();
+
+            string sqlCmd = $"Insert Into ssv_date Values(51,'{txt_entryName.Text}',{dateTimeFrom.ToString("yyyy-MM-dd HH:mm:ss")},{dateTimeTo.ToString("yyyy-MM-dd HH:mm:ss")},{txt_description.Text},'1')";
+            db.RunNonQuery(sqlCmd);
         }
     }
 }

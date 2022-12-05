@@ -12,3 +12,8 @@ div{
 .calendar{
     width : 700px;
 }
+
+.buttonRight {
+    float: right;
+    padding:10px;
+}
