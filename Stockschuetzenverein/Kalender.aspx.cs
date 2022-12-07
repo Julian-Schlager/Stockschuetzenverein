@@ -30,10 +30,11 @@ namespace Stockschuetzenverein
             if (!IsPostBack)
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
+                FillTable();
                 //Try2Connect();
-                DataTable dataTable = new DataTable();
-                string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
-                dataTable = db.RunQuery(sqlcmd);
+                //DataTable dataTable = new DataTable();
+                //string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
+                //dataTable = db.RunQuery(sqlcmd);
 
             }
              DataTable dt = GetAppointments();
@@ -73,8 +74,6 @@ namespace Stockschuetzenverein
             dt.Columns.Add("Desc");
             dt.Rows.Add("01/November/2022", "party time");
             dt.Rows.Add("23/November/2022", "I luv swp");
-            
-
 
             return dt;
         }
@@ -82,7 +81,7 @@ namespace Stockschuetzenverein
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
             //Panel.Visible = true;
-            calendar_1.Enabled = false;
+            //calendar_1.Enabled = false;
 
             //OKButton.Visible = true;
         }
@@ -107,7 +106,7 @@ namespace Stockschuetzenverein
         {
             //Panel.Visible = false;
             //OKButton.Visible = false;
-            calendar_1.Enabled = true;
+            //calendar_1.Enabled = true;
         }
 
         protected void btn_saveChanges_Click(object sender, EventArgs e)
@@ -124,6 +123,34 @@ namespace Stockschuetzenverein
             db.RunNonQuery(sqlCmd);
         }
 
-        
+        private void FillTable()
+        {
+            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = 2";
+            DataTable dt = db.RunQuery(sql);
+            TableRow row = null;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                row = new TableRow();
+
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    TableCell cell = new TableCell();
+
+                    if(dt.Rows[i][j].GetType() == typeof(DateTime))
+                    {
+                        
+                    }
+
+                    cell.Text = dt.Rows[i][j].ToString();
+
+                    row.Cells.Add(cell);
+                }
+
+                tbl_entries.Rows.Add(row);
+
+            }
+
+        }
     }
 }
