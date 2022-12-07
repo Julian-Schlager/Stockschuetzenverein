@@ -34,7 +34,7 @@ namespace Stockschuetzenverein
                 DataTable dataTable = new DataTable();
                 string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
                 dataTable = db.RunQuery(sqlcmd);
-
+                
             }
              DataTable dt = GetAppointments();
 
