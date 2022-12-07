@@ -70,7 +70,7 @@ namespace DataBaseWrapper
             return dt;
         }
 
-        public Object RunQueryScalar(string sqlCmd)
+        public object RunQueryScalar(string sqlCmd)
         {
             object output = null;
             OdbcCommand cmd = new OdbcCommand(sqlCmd, connection);

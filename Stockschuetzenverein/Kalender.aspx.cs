@@ -25,23 +25,7 @@ namespace Stockschuetzenverein
 
        
         protected void Page_Load(object sender, EventArgs e)
-        {
-            Panel.Visible = false;
-            OKButton.Visible = false;
-
-            // Ein kleiner test für dynamisches Label und Tabelle
-            //Label guteLabel = new Label();
-            //guteLabel.Text = "<br>Hi was geht?";
-            //Panel.Controls.Add(guteLabel);
-
-            DataTable Ldt = new DataTable();
-            Ldt.Columns.Add("Name");
-            Ldt.Columns.Add("Zeit");
-            Ldt.Rows.Add("Test", "11:55");
-            FillPanelWithDate(Ldt);
-            
-            
-            
+        {   
 
             if (!IsPostBack)
             {
@@ -52,22 +36,7 @@ namespace Stockschuetzenverein
 
         }
 
-        private void FillPanelWithDate(DataTable NameAndTime)
-        {
-            LinkButton name = new LinkButton();
-            Label time = new Label();
-            foreach(DataRow Row in NameAndTime.Rows)
-            {
-                name.Text ="<br>" +  Row[0].ToString();
-                //name.OnClientClick = "Response.Redirect(\"TerminDetailAnsicht.aspx\");";
-                name.OnClientClick = "name.Text = time.Text";
-                time.Text = " um " + Row[1].ToString();
-
-                Panel.Controls.Add(name);
-                Panel.Controls.Add(time);
-            }
-        }
-
+       
         private void Try2Connect()
         {
 
@@ -108,10 +77,10 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
-            Panel.Visible = true;
+            //Panel.Visible = true;
             calendar_1.Enabled = false;
 
-            OKButton.Visible = true;
+            //OKButton.Visible = true;
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
         {
@@ -132,8 +101,8 @@ namespace Stockschuetzenverein
 
         protected void OKButton_Click(object sender, EventArgs e)
         {
-            Panel.Visible = false;
-            OKButton.Visible = false;
+            //Panel.Visible = false;
+            //OKButton.Visible = false;
             calendar_1.Enabled = true;
         }
 
@@ -142,9 +111,12 @@ namespace Stockschuetzenverein
             DataBase db = new DataBase(connStrg);
             DateTime.TryParse($"{txt_dateFrom.Text} {txt_timeFrom.Text}",out DateTime dateTimeFrom);
             DateTime.TryParse($"{txt_dateTo.Text} {txt_timeTo.Text}",out DateTime dateTimeTo);
-          
 
-            string sqlCmd = $"Insert Into ssv_date Values(51,'{txt_entryName.Text}','{dateTimeFrom.ToString("yyyy-MM-dd HH:mm:ss")}','{dateTimeTo.ToString("yyyy-MM-dd HH:mm:ss")}','{txt_description.Text}','101')";
+            int id;
+            string sqlcmd = "SELECT MAX(DateID) FROM ssv_date;";
+            id = int.Parse((db.RunQueryScalar(sqlcmd).ToString())) + 1;
+
+            string sqlCmd = $"Insert Into ssv_date Values({id},'{txt_entryName.Text}','{dateTimeFrom.ToString("yyyy-MM-dd HH:mm:ss")}','{dateTimeTo.ToString("yyyy-MM-dd HH:mm:ss")}','{txt_description.Text}','101')";
             db.RunNonQuery(sqlCmd);
         }
 

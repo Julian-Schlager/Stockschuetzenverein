@@ -9,12 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <title></title>
-    <style type="text/css">
-        .auto-style4 {
-            height: 6px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <div class="buttonRight">
@@ -36,19 +31,6 @@
             </div>
 
             <br />
-
-            <asp:Panel ID="Panel" runat="server" Width="500px">
-                <table class="auto-style4">
-                    <%-- <tr> <td class="auto-style1"> Datum: <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    </td></tr>
-                <tr> <td class="auto-style3"> Name: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                    </td></tr>
-                <tr> <td class="auto-style3"> Beschreibung: <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                    </td></tr>--%>
-                </table>
-                <br />
-                <asp:Button ID="OKButton" runat="server" Text="Close" OnClick="OKButton_Click" />
-            </asp:Panel>
 
             <br />
             <br />
