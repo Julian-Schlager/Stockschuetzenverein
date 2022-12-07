@@ -15,5 +15,8 @@ div{
 
 .buttonRight {
     float: right;
-    padding:10px;
+}
+
+.homeButton{
+    float:left;
 }
