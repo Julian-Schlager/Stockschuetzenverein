@@ -96,22 +96,13 @@ namespace Stockschuetzenverein
         protected global::System.Web.UI.WebControls.Button OKButton;
 
         /// <summary>
-        /// BulletedList1 control.
+        /// tbl_entries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList1;
-
-        /// <summary>
-        /// BulletedList2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList2;
+        protected global::System.Web.UI.WebControls.Table tbl_entries;
 
         /// <summary>
         /// txt_entryName control.

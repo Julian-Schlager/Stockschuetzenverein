@@ -67,25 +67,14 @@
                     <br />
                 </div>
                 <div class="col-4">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Termin Name</th>
-                                <th scope="col">Datum</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <asp:BulletedList ID="BulletedList1" runat="server"></asp:BulletedList>
-                                </td>
-                                <td>
-                                    <asp:BulletedList ID="BulletedList2" runat="server"></asp:BulletedList>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                    <asp:Table ID="tbl_entries" runat="server" class="table">
+                        <asp:TableHeaderRow runat="server">
+                            <asp:TableHeaderCell scope="Column" runat ="server">Name</asp:TableHeaderCell>
+                            <asp:TableHeaderCell scope="Column" runat ="server">Datum</asp:TableHeaderCell>
+                        </asp:TableHeaderRow>
+                        <asp:TableRow runat="server">
+                        </asp:TableRow>
+                    </asp:Table>
                 </div>
             </div>
         </div>
