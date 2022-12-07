@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-8">
                     <div class="calendar">
-                        <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="1px" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+                        <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
                             OnDayRender="calendar_1_DayRender" ShowGridLines="True">
 
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -40,18 +40,27 @@
 
                     <br />
 
-                    <asp:Panel ID="Panel" runat="server" Width="500px">
+                    <!--<asp:Panel ID="Panel" runat="server" Width="500px">
                         <table class="auto-style4">
-                            <%-- <tr> <td class="auto-style1"> Datum: <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    </td></tr>
-                <tr> <td class="auto-style3"> Name: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                    </td></tr>
-                <tr> <td class="auto-style3"> Beschreibung: <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                    </td></tr>--%>
+                            <tr>
+                                <td class="auto-style1">Datum:
+                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Name:
+                                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style3">Beschreibung:
+                                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
                         </table>
                         <br />
                         <asp:Button ID="OKButton" runat="server" Text="Close" OnClick="OKButton_Click" />
-                    </asp:Panel>
+                    </asp:Panel>-->
 
                     <br />
                     <br />
