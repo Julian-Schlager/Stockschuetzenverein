@@ -20,10 +20,10 @@ namespace Stockschuetzenverein
     public partial class Kalender : System.Web.UI.Page
     {
         // Datenbankdaten, alles auf mein Nacken Jungs - Lugas
-        string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
+        DataBase db = new DataBase(connStrg);
 
-       
         protected void Page_Load(object sender, EventArgs e)
         {   
 
@@ -31,6 +31,10 @@ namespace Stockschuetzenverein
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 //Try2Connect();
+                DataTable dataTable = new DataTable();
+                string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
+                dataTable = db.RunQuery(sqlcmd);
+
             }
              DataTable dt = GetAppointments();
 
@@ -108,7 +112,7 @@ namespace Stockschuetzenverein
 
         protected void btn_saveChanges_Click(object sender, EventArgs e)
         {
-            DataBase db = new DataBase(connStrg);
+            
             DateTime.TryParse($"{txt_dateFrom.Text} {txt_timeFrom.Text}",out DateTime dateTimeFrom);
             DateTime.TryParse($"{txt_dateTo.Text} {txt_timeTo.Text}",out DateTime dateTimeTo);
 
