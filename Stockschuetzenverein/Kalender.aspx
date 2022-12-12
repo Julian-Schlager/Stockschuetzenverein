@@ -16,7 +16,7 @@
         <!-- Navigation Bar -->
         <nav class="navbar bg-light">
             <div class="container-fluid">
-                <asp:LinkButton CssClass="homeButton" ID="LinkButton1" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">home</i></asp:LinkButton>
+                <asp:LinkButton CssClass="homeButton" ID="btn_homeButton" runat="server" ForeColor="Black" CausesValidation="True" OnClick="btn_homeButton_Click"><i class="material-icons">home</i></asp:LinkButton>
                 <div class="buttonRight">
                     <asp:LinkButton ID="btn_addEntry" runat="server" ForeColor="Black" CausesValidation="True" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">add</i></asp:LinkButton>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="col-8">
                     <!-- Calander -->
                     <div class="calendar">
-                        <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-11-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+                        <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-01-01" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
                             OnDayRender="calendar_1_DayRender" ShowGridLines="True">
 
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -68,7 +68,8 @@
                     <asp:Table ID="tbl_entries" runat="server" class="table">
                         <asp:TableHeaderRow runat="server">
                             <asp:TableHeaderCell scope="Column" runat ="server">Name</asp:TableHeaderCell>
-                            <asp:TableHeaderCell scope="Column" runat ="server">Datum</asp:TableHeaderCell>
+                            <asp:TableHeaderCell scope="Column" runat ="server">Datum Von</asp:TableHeaderCell>
+                            <asp:TableHeaderCell scope="Column" runat ="server">Datum Bis</asp:TableHeaderCell>
                         </asp:TableHeaderRow>
                         <asp:TableRow runat="server">
                         </asp:TableRow>

@@ -30,14 +30,15 @@ namespace Stockschuetzenverein
             if (!IsPostBack)
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
-                FillTable();
                 //Try2Connect();
                 //DataTable dataTable = new DataTable();
                 //string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
                 //dataTable = db.RunQuery(sqlcmd);
 
             }
-             DataTable dt = GetAppointments();
+            calendar_1.SelectMonthText = DateTime.Now.Month.ToString();
+            FillTable();
+            DataTable dt = GetAppointments();
 
         }
 
@@ -111,7 +112,6 @@ namespace Stockschuetzenverein
 
         protected void btn_saveChanges_Click(object sender, EventArgs e)
         {
-            
             DateTime.TryParse($"{txt_dateFrom.Text} {txt_timeFrom.Text}",out DateTime dateTimeFrom);
             DateTime.TryParse($"{txt_dateTo.Text} {txt_timeTo.Text}",out DateTime dateTimeTo);
 
@@ -125,7 +125,7 @@ namespace Stockschuetzenverein
 
         private void FillTable()
         {
-            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = 2";
+            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {GetSelectedMonth(calendar_1.SelectMonthText)}";
             DataTable dt = db.RunQuery(sql);
             TableRow row = null;
 
@@ -137,11 +137,6 @@ namespace Stockschuetzenverein
                 {
                     TableCell cell = new TableCell();
 
-                    if(dt.Rows[i][j].GetType() == typeof(DateTime))
-                    {
-                        
-                    }
-
                     cell.Text = dt.Rows[i][j].ToString();
 
                     row.Cells.Add(cell);
@@ -151,6 +146,22 @@ namespace Stockschuetzenverein
 
             }
 
+        }
+
+        protected void btn_homeButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Kalender.aspx");
+        }
+
+        private string GetSelectedMonth(string input)
+        {
+            if (input == "&gt;&gt;") return DateTime.Now.Month.ToString();
+            else return input;
+        }
+
+        protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
+        {
+            FillTable();
         }
     }
 }

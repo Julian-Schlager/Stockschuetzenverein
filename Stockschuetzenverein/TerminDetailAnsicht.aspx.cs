@@ -14,7 +14,7 @@ namespace Stockschuetzenverein
 
         }
 
-        protected void btn_return_Click(object sender, EventArgs e)
+        protected void btn_home_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Kalender.aspx");
         }

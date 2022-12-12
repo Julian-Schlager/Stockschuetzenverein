@@ -15,20 +15,17 @@
     <form id="form1" runat="server">
         <nav class="navbar bg-light">
             <div class="container-fluid">
-                <asp:LinkButton CssClass="homeButton" ID="LinkButton1" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">home</i></asp:LinkButton>
+                <asp:LinkButton CssClass="homeButton" ID="btn_home" runat="server" ForeColor="Black" CausesValidation="True" OnClick="btn_home_Click"><i class="material-icons">home</i></asp:LinkButton>
                 <div class="buttonRight">
                     <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
-                    <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">edit</i></asp:LinkButton>
+                    <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#editEntryModal"><i class="material-icons">edit</i></asp:LinkButton>
                     <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
                 </div>
             </div>
         </nav>
-        <br />
-        <div class="container text-center">
-        </div>
 
         <!-- Modal Pop Up for adding entries -->
-        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal" id="editEntryModal" tabindex="-1" aria-labelledby="lbl_editEntryModal" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
