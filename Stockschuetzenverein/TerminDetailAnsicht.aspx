@@ -13,16 +13,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="buttons">
-            <div class="returnButton">
-                <asp:LinkButton ID="btn_return" runat="server" ForeColor="Black" OnClick="btn_return_Click"><i class="material-icons">arrow_back</i></asp:LinkButton>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <asp:LinkButton CssClass="homeButton" ID="LinkButton1" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">home</i></asp:LinkButton>
+                <div class="buttonRight">
+                    <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
+                    <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">edit</i></asp:LinkButton>
+                    <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
+                </div>
             </div>
-            <div class="buttonsRight">
-                <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
-                <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">edit</i></asp:LinkButton>
-                <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
-            </div>
-        </div>
+        </nav>
         <br />
         <div class="container text-center">
         </div>
