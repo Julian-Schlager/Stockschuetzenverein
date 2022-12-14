@@ -28,7 +28,7 @@
                 <div class="col-8">
                     <!-- Calander -->
                     <div class="calendar">
-                        <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-01-01" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+                        <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
                             OnDayRender="calendar_1_DayRender" ShowGridLines="True">
 
                             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
