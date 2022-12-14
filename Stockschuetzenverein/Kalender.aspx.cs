@@ -125,11 +125,17 @@ namespace Stockschuetzenverein
 
         private void FillTable()
         {
-            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {GetSelectedMonth(calendar_1.SelectMonthText)}";
+            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {GetSelectedMonth()}";
             DataTable dt = db.RunQuery(sql);
             TableRow row = null;
-
-            tbl_entries.Rows.Clear();
+            if (Page.IsPostBack)
+            {
+                for (int i = 1; i < tbl_entries.Rows.Count; i++)
+                {
+                    tbl_entries.Rows.Remove(tbl_entries.Rows[i]);
+                }
+            }
+            
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -143,7 +149,6 @@ namespace Stockschuetzenverein
 
                     row.Cells.Add(cell);
                 }
-
                 tbl_entries.Rows.Add(row);
             }
 
@@ -154,10 +159,10 @@ namespace Stockschuetzenverein
             Response.Redirect("/Kalender.aspx");
         }
 
-        private string GetSelectedMonth(string input)
+        private string GetSelectedMonth()
         {
-            if (input == "&gt;&gt;") return DateTime.Now.Month.ToString();
-            else return input;
+            if (calendar_1.SelectMonthText == "&gt;&gt;") return DateTime.Now.Month.ToString();
+            else return calendar_1.SelectMonthText;
         }
 
         protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
