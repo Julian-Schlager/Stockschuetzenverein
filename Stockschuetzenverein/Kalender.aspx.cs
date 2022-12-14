@@ -31,6 +31,7 @@ namespace Stockschuetzenverein
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 calendar_1.SelectMonthText = DateTime.Now.Month.ToString();
+                calendar_1.SelectedDate = DateTime.Today;
                 //Try2Connect();
                 //DataTable dataTable = new DataTable();
                 //string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
@@ -39,6 +40,7 @@ namespace Stockschuetzenverein
             }
             FillTable();
             DataTable dt = GetAppointments();
+            DateTime test = calendar_1.SelectedDate;
 
         }
 
@@ -85,6 +87,7 @@ namespace Stockschuetzenverein
             //calendar_1.Enabled = false;
 
             //OKButton.Visible = true;
+
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
         {
