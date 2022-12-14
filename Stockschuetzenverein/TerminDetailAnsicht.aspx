@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <!-- Import Stylesheets and Libaries -->
+    <title>Detail</title>
     <link href="Design_TerminDetailAnsicht.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
@@ -12,22 +13,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="buttons">
-            <div class="returnButton">
-                <asp:LinkButton ID="btn_return" runat="server" ForeColor="Black" OnClick="btn_return_Click"><i class="material-icons">arrow_back</i></asp:LinkButton>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <asp:LinkButton CssClass="homeButton" ID="btn_home" runat="server" ForeColor="Black" CausesValidation="True" OnClick="btn_home_Click"><i class="material-icons">home</i></asp:LinkButton>
+                <div class="buttonRight">
+                    <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
+                    <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#editEntryModal"><i class="material-icons">edit</i></asp:LinkButton>
+                    <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
+                </div>
             </div>
-            <div class="buttonsRight">
-                <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
-                <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">edit</i></asp:LinkButton>
-                <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
-            </div>
-        </div>
-        <br />
-        <div class="container text-center">
-            
-        </div>
+        </nav>
 
-        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal Pop Up for adding entries -->
+        <div class="modal" id="editEntryModal" tabindex="-1" aria-labelledby="lbl_editEntryModal" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -43,8 +41,8 @@
                             <asp:TextBox ID="txt_dateTo" runat="server" type="text" class="form-control" placeholder="Datum Bis" aria-label="Datum Bis" aria-describedby="basic-addon1"></asp:TextBox>
                         </div>
                         <div class="input-group mb-3">
-                            <asp:TextBox ID="txt_timeFrom" runat="server" type="text" class="form-control" placeholder="Uhrzeit Von" aria-label="Uhrzeit Von" aria-describedby="basic-addon1" ></asp:TextBox>
-                            <asp:TextBox ID="txt_timeTo" runat="server" type="text" class="form-control" placeholder="Uhrzeit Bis" aria-label="Uhrzeit Bis" aria-describedby="basic-addon1" ></asp:TextBox>
+                            <asp:TextBox ID="txt_timeFrom" runat="server" type="text" class="form-control" placeholder="Uhrzeit Von" aria-label="Uhrzeit Von" aria-describedby="basic-addon1"></asp:TextBox>
+                            <asp:TextBox ID="txt_timeTo" runat="server" type="text" class="form-control" placeholder="Uhrzeit Bis" aria-label="Uhrzeit Bis" aria-describedby="basic-addon1"></asp:TextBox>
                         </div>
                         <div class="input-group">
                             <asp:TextBox ID="txt_description" runat="server" type="text" class="form-control" placeholder="Termin Beschreibung" aria-label="Termin Beschreibung" aria-describedby="basic-addon1" TextMode="MultiLine"></asp:TextBox>
@@ -52,7 +50,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <asp:Button ID="btn_saveChanges" runat="server" Text="Save changes" type="button" class="btn btn-primary"/>
+                        <asp:Button ID="btn_saveChanges" runat="server" Text="Save changes" type="button" class="btn btn-primary" />
                     </div>
                 </div>
             </div>

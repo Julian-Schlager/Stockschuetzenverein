@@ -31,12 +31,14 @@ namespace Stockschuetzenverein
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 //Try2Connect();
-                DataTable dataTable = new DataTable();
-                string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
-                dataTable = db.RunQuery(sqlcmd);
-                
+                //DataTable dataTable = new DataTable();
+                //string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
+                //dataTable = db.RunQuery(sqlcmd);
+
             }
-             DataTable dt = GetAppointments();
+            calendar_1.SelectMonthText = DateTime.Now.Month.ToString();
+            FillTable();
+            DataTable dt = GetAppointments();
 
         }
 
@@ -73,8 +75,6 @@ namespace Stockschuetzenverein
             dt.Columns.Add("Desc");
             dt.Rows.Add("01/November/2022", "party time");
             dt.Rows.Add("23/November/2022", "I luv swp");
-            
-
 
             return dt;
         }
@@ -82,7 +82,7 @@ namespace Stockschuetzenverein
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
             //Panel.Visible = true;
-            calendar_1.Enabled = false;
+            //calendar_1.Enabled = false;
 
             //OKButton.Visible = true;
         }
@@ -107,12 +107,11 @@ namespace Stockschuetzenverein
         {
             //Panel.Visible = false;
             //OKButton.Visible = false;
-            calendar_1.Enabled = true;
+            //calendar_1.Enabled = true;
         }
 
         protected void btn_saveChanges_Click(object sender, EventArgs e)
         {
-            
             DateTime.TryParse($"{txt_dateFrom.Text} {txt_timeFrom.Text}",out DateTime dateTimeFrom);
             DateTime.TryParse($"{txt_dateTo.Text} {txt_timeTo.Text}",out DateTime dateTimeTo);
 
@@ -124,6 +123,45 @@ namespace Stockschuetzenverein
             db.RunNonQuery(sqlCmd);
         }
 
-        
+        private void FillTable()
+        {
+            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {GetSelectedMonth(calendar_1.SelectMonthText)}";
+            DataTable dt = db.RunQuery(sql);
+            TableRow row = null;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                row = new TableRow();
+
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    TableCell cell = new TableCell();
+
+                    cell.Text = dt.Rows[i][j].ToString();
+
+                    row.Cells.Add(cell);
+                }
+
+                tbl_entries.Rows.Add(row);
+
+            }
+
+        }
+
+        protected void btn_homeButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Kalender.aspx");
+        }
+
+        private string GetSelectedMonth(string input)
+        {
+            if (input == "&gt;&gt;") return DateTime.Now.Month.ToString();
+            else return input;
+        }
+
+        protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
+        {
+            FillTable();
+        }
     }
 }
