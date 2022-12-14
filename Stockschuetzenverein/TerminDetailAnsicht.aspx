@@ -13,13 +13,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar bg-light">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container-fluid">
-                <asp:LinkButton CssClass="homeButton" ID="btn_home" runat="server" ForeColor="Black" CausesValidation="True" OnClick="btn_home_Click"><i class="material-icons">home</i></asp:LinkButton>
-                <div class="buttonRight">
-                    <asp:LinkButton ID="btn_addPictures" runat="server" ForeColor="Black" CausesValidation="True"><i class="material-icons">add</i></asp:LinkButton>
-                    <asp:LinkButton ID="btn_editEntry" runat="server" ForeColor="Black" data-bs-toggle="modal" data-bs-target="#editEntryModal"><i class="material-icons">edit</i></asp:LinkButton>
-                    <asp:LinkButton ID="btn_deleteEntry" runat="server" ForeColor="Black"><i class="material-icons">delete</i></asp:LinkButton>
+                <a class="navbar-brand" href="#page-top">
+                    <asp:LinkButton ID="btn_home" runat="server" class="btn btn-outline-light" OnClick="btn_home_Click">SSV</asp:LinkButton></a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <asp:LinkButton CssClass="nav-item" ID="btn_addPictures" runat="server" ForeColor="White" CausesValidation="True"><i class="material-icons">photo</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item" ID="btn_editEntry" runat="server" ForeColor="White" data-bs-toggle="modal" data-bs-target="#editEntryModal"><i class="material-icons">edit</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item" ID="btn_deleteEntry" runat="server" ForeColor="White"><i class="material-icons">delete</i></asp:LinkButton>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -50,7 +54,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <asp:Button ID="btn_saveChanges" runat="server" Text="Save changes" type="button" class="btn btn-primary" />
+                        <asp:Button ID="btn_saveChanges" runat="server" Text="Save changes" type="button" class="btn btn-primary" OnClick="btn_saveChanges_Click"/>
                     </div>
                 </div>
             </div>

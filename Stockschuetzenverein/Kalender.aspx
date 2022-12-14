@@ -14,9 +14,10 @@
 <body>
     <form id="form1" runat="server">
         <!-- Navigation Bar -->
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#page-top"><asp:LinkButton ID="btn_home" runat="server" class="btn btn-outline-light">SSV</asp:LinkButton></a>
+                <a class="navbar-brand" href="#page-top">
+                    <asp:LinkButton ID="btn_home" runat="server" class="btn btn-outline-light">SSV</asp:LinkButton></a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <asp:LinkButton CssClass="nav-item" ID="btn_addEntry" runat="server" ForeColor="White" CausesValidation="True" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">add</i></asp:LinkButton>
@@ -29,38 +30,17 @@
             <!-- Calander -->
             <div class="p-2 flex-fill">
                 <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
-                    OnDayRender="calendar_1_DayRender" ShowGridLines="True" Height="500px" Width="900px">
+                    OnDayRender="calendar_1_DayRender" ShowGridLines="True" Height="700px" Width="1350px">
 
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" BorderStyle="None" />
                     <OtherMonthDayStyle ForeColor="#999999" BorderStyle="None" />
-                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                    <SelectedDayStyle BackColor="#CCCCCC" ForeColor="White" />
                     <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderStyle="None" />
                     <TodayDayStyle BackColor="#CCCCCC" />
                 </asp:Calendar>
             </div>
-            <!-- Panel(Outdated) -->
-            <!--<asp:Panel ID="Panel" runat="server" Width="500px">
-                        <table class="auto-style4">
-                            <tr>
-                                <td class="auto-style1">Datum:
-                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style3">Name:
-                                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style3">Beschreibung:
-                                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                        <br />
-                        <asp:Button ID="OKButton" runat="server" Text="Close" OnClick="OKButton_Click" />
-                    </asp:Panel>-->
+            <!-- List of all entries in a month -->
             <div class="p-2 flex-fill">
                 <asp:Table ID="tbl_entries" runat="server" class="table">
                     <asp:TableHeaderRow runat="server">
@@ -73,9 +53,6 @@
                 </asp:Table>
             </div>
         </div>
-
-        <!-- List of all entries in a month -->
-
 
         <!-- Modal Pop Up for adding entries -->
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
