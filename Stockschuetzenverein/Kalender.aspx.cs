@@ -40,6 +40,7 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
+            
             //Panel.Visible = true;
             //calendar_1.Enabled = false;
 
@@ -126,5 +127,7 @@ namespace Stockschuetzenverein
         {
             if(e.PreviousDate.Month != e.NewDate.Month) FillTable(e.NewDate);
         }
+
+       
     }
 }
