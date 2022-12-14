@@ -30,13 +30,13 @@ namespace Stockschuetzenverein
             if (!IsPostBack)
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
+                calendar_1.SelectMonthText = DateTime.Now.Month.ToString();
                 //Try2Connect();
                 //DataTable dataTable = new DataTable();
                 //string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
                 //dataTable = db.RunQuery(sqlcmd);
 
             }
-            calendar_1.SelectMonthText = DateTime.Now.Month.ToString();
             FillTable();
             DataTable dt = GetAppointments();
 
@@ -129,6 +129,8 @@ namespace Stockschuetzenverein
             DataTable dt = db.RunQuery(sql);
             TableRow row = null;
 
+            tbl_entries.Rows.Clear();
+
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 row = new TableRow();
@@ -143,7 +145,6 @@ namespace Stockschuetzenverein
                 }
 
                 tbl_entries.Rows.Add(row);
-
             }
 
         }
