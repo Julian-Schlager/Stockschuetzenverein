@@ -23,6 +23,7 @@ namespace Stockschuetzenverein
         static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
+        int currentMonth = DateTime.Now.Month;
 
         protected void Page_Load(object sender, EventArgs e)
         {   
@@ -30,7 +31,6 @@ namespace Stockschuetzenverein
             if (!IsPostBack)
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
-                calendar_1.SelectMonthText = DateTime.Now.Month.ToString();
                 calendar_1.SelectedDate = DateTime.Today;
                 //Try2Connect();
                 //DataTable dataTable = new DataTable();
@@ -38,10 +38,8 @@ namespace Stockschuetzenverein
                 //dataTable = db.RunQuery(sqlcmd);
 
             }
-            FillTable();
+            FillTable(calendar_1.SelectedDate);
             DataTable dt = GetAppointments();
-            DateTime test = calendar_1.SelectedDate;
-
         }
 
        
@@ -87,6 +85,7 @@ namespace Stockschuetzenverein
             //calendar_1.Enabled = false;
 
             //OKButton.Visible = true;
+            //DateTime test = calendar_1.SelectedDate;
 
         }
         protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
@@ -126,9 +125,9 @@ namespace Stockschuetzenverein
             db.RunNonQuery(sqlCmd);
         }
 
-        private void FillTable()
+        private void FillTable(DateTime date)
         {
-            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {GetSelectedMonth()}";
+            string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {date.Month} AND YEAR(DateFrom) = {date.Year}";
             DataTable dt = db.RunQuery(sql);
             TableRow row = null;
             if (Page.IsPostBack)
@@ -136,6 +135,7 @@ namespace Stockschuetzenverein
                 for (int i = 1; i < tbl_entries.Rows.Count; i++)
                 {
                     tbl_entries.Rows.Remove(tbl_entries.Rows[i]);
+                    i--;
                 }
             }
             
@@ -170,7 +170,9 @@ namespace Stockschuetzenverein
 
         protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
         {
-            FillTable();
+            FillTable(e.NewDate);
+            
+            
         }
     }
 }
