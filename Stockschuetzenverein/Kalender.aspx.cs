@@ -23,7 +23,6 @@ namespace Stockschuetzenverein
         static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
-        int currentMonth = DateTime.Now.Month;
 
         protected void Page_Load(object sender, EventArgs e)
         {   
@@ -32,52 +31,12 @@ namespace Stockschuetzenverein
             {
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 calendar_1.SelectedDate = DateTime.Today;
-                //Try2Connect();
-                //DataTable dataTable = new DataTable();
-                //string sqlcmd = $"SELECT Name FROM ssv_date WHERE Month(DateFrom) = {calendar_1.SelectMonthText};";
-                //dataTable = db.RunQuery(sqlcmd);
-
+                FillTable(calendar_1.SelectedDate);
             }
-            FillTable(calendar_1.SelectedDate);
-            DataTable dt = GetAppointments();
-        }
-
-       
-        private void Try2Connect()
-        {
-
-            OdbcConnection conn = new OdbcConnection(connStrg);
-            try
-            {
-                conn.Open();
-                //lbConnection.Text = "db connection ok";
-            }
-            catch (Exception ex)
-            {
-                //lbConnection.Text = "cannot connect to database: " + ex.Message;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-        void AddTermin(string terminText,DateTime datum)
-        {
+            else FillTable(Convert.ToDateTime(ViewState["date"]));
             
-
-
         }
-        private DataTable GetAppointments()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Date");
-            dt.Columns.Add("Desc");
-            dt.Rows.Add("01/November/2022", "party time");
-            dt.Rows.Add("23/November/2022", "I luv swp");
 
-            return dt;
-        }
 
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
@@ -127,6 +86,7 @@ namespace Stockschuetzenverein
 
         private void FillTable(DateTime date)
         {
+            ViewState["date"] = date;
             string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {date.Month} AND YEAR(DateFrom) = {date.Year}";
             DataTable dt = db.RunQuery(sql);
             TableRow row = null;
@@ -134,7 +94,7 @@ namespace Stockschuetzenverein
             {
                 for (int i = 1; i < tbl_entries.Rows.Count; i++)
                 {
-                    tbl_entries.Rows.Remove(tbl_entries.Rows[i]);
+                    tbl_entries.Rows.RemoveAt(i);
                     i--;
                 }
             }
@@ -154,7 +114,6 @@ namespace Stockschuetzenverein
                 }
                 tbl_entries.Rows.Add(row);
             }
-
         }
 
         protected void btn_homeButton_Click(object sender, EventArgs e)
@@ -162,17 +121,10 @@ namespace Stockschuetzenverein
             Response.Redirect("/Kalender.aspx");
         }
 
-        private string GetSelectedMonth()
-        {
-            if (calendar_1.SelectMonthText == "&gt;&gt;") return DateTime.Now.Month.ToString();
-            else return calendar_1.SelectMonthText;
-        }
 
         protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
         {
-            FillTable(e.NewDate);
-            
-            
+            if(e.PreviousDate.Month != e.NewDate.Month) FillTable(e.NewDate);
         }
     }
 }
