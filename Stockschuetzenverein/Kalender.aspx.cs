@@ -24,54 +24,30 @@ namespace Stockschuetzenverein
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
 
+
+
         protected void Page_Load(object sender, EventArgs e)
         {   
-
             if (!IsPostBack)
             {
+                // Kalender erstellen und zum heutigen Datum einstellen
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 calendar_1.SelectedDate = DateTime.Today;
                 FillTable(calendar_1.SelectedDate);
             }
+            // Tabelle füllen bei jeden Postback weil sonst die Tabelle verschwindet
             else FillTable(Convert.ToDateTime(ViewState["date"]));
-            
         }
 
 
-        protected void calendar_1_SelectionChanged(object sender, EventArgs e)
+
+        // Wenn ein anderer Monat ausgewählt wird, soll die Tabelle die jeweilige Termine anzeigen die im Monat sind.
+        protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
         {
-            
-            //Panel.Visible = true;
-            //calendar_1.Enabled = false;
-
-            //OKButton.Visible = true;
-            //DateTime test = calendar_1.SelectedDate;
-
-        }
-        protected void calendar_1_DayRender(object sender, DayRenderEventArgs e)
-        {
-
-            //DataTable dt = GetAppointments();
-
-            //foreach(DataRow row in dt.Rows)
-            //{
-            //    if(Convert.ToDateTime(e.Day.Date) == Convert.ToDateTime(row["Date"]))
-            //    {
-            //        e.Cell.Controls.Add(new Label { Text = "<br/" });
-            //        e.Cell.Controls.Add(new Label { Text = row["Desc"].ToString() });
-            //    }
-            //}
-
-            
+            if (e.PreviousDate.Month != e.NewDate.Month) FillTable(e.NewDate);
         }
 
-        protected void OKButton_Click(object sender, EventArgs e)
-        {
-            //Panel.Visible = false;
-            //OKButton.Visible = false;
-            //calendar_1.Enabled = true;
-        }
-
+        // Termin erstellen
         protected void btn_saveChanges_Click(object sender, EventArgs e)
         {
             DateTime.TryParse($"{txt_dateFrom.Text} {txt_timeFrom.Text}",out DateTime dateTimeFrom);
@@ -85,12 +61,15 @@ namespace Stockschuetzenverein
             db.RunNonQuery(sqlCmd);
         }
 
+
+        // Tabelle die rechts neben den Kalnder ist ne, ja die aufüllen und den Datum speichern damit .... schau einfach bei PageLoad
         private void FillTable(DateTime date)
         {
             ViewState["date"] = date;
             string sql = $"Select Name,DateFrom,DateTo From ssv_date Where Month(DateFrom) = {date.Month} AND YEAR(DateFrom) = {date.Year}";
             DataTable dt = db.RunQuery(sql);
             TableRow row = null;
+            // Tabelle leeren
             if (Page.IsPostBack)
             {
                 for (int i = 1; i < tbl_entries.Rows.Count; i++)
@@ -99,8 +78,7 @@ namespace Stockschuetzenverein
                     i--;
                 }
             }
-            
-
+            // und die neue daten einfügen
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 row = new TableRow();
@@ -117,17 +95,14 @@ namespace Stockschuetzenverein
             }
         }
 
+
+
+
+
+        // Home Button der theoritsch useless ist.
         protected void btn_homeButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Kalender.aspx");
         }
-
-
-        protected void calendar_1_VisibleMonthChanged(object sender, MonthChangedEventArgs e)
-        {
-            if(e.PreviousDate.Month != e.NewDate.Month) FillTable(e.NewDate);
-        }
-
-       
     }
 }

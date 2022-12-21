@@ -29,9 +29,9 @@
         <div class="d-flex">
             <!-- Calander -->
             <div class="p-2 flex-fill">
-                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" OnSelectionChanged="calendar_1_SelectionChanged" VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
-                    OnDayRender="calendar_1_DayRender" ShowGridLines="True" Height="700px" Width="1350px">
-                    
+                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged"  VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+                    ShowGridLines="True" Height="700px" Width="1350px">
+
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" BorderStyle="None" />
                     <OtherMonthDayStyle ForeColor="#999999" BorderStyle="None" />
