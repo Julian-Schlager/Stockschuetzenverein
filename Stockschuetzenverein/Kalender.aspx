@@ -29,7 +29,7 @@
         <div class="d-flex">
             <!-- Calander -->
             <div class="p-2 flex-fill">
-                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged"  VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="11/14/2022 11:59:24" BorderWidth="1px"
+                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged"  VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="2023-01-09" BorderWidth="1px"
                     ShowGridLines="True" Height="700px" Width="1350px">
 
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
@@ -59,7 +59,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Termin Bearbeiten</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Termin erstellen</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
