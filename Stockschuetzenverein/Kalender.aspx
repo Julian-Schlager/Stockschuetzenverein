@@ -29,7 +29,7 @@
         <div class="d-flex">
             <!-- Calander -->
             <div class="p-2 flex-fill">
-                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged"  VisibleDate="2022-12-14" EnableTheming="True" SelectedDate="2023-01-09" BorderWidth="1px"
+                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
                     ShowGridLines="True" Height="700px" Width="1350px">
 
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
