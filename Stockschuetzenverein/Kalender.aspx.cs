@@ -32,8 +32,8 @@ namespace Stockschuetzenverein
             {
                 // Kalender erstellen und zum heutigen Datum einstellen
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
-                calendar_1.SelectedDate = DateTime.Today;
-                FillTable(calendar_1.SelectedDate);
+                //calendar_1.SelectedDate = DateTime.Today;
+                //FillTable(calendar_1.SelectedDate);
             }
             // Tabelle füllen bei jeden Postback weil sonst die Tabelle verschwindet
             else FillTable(Convert.ToDateTime(ViewState["date"]));

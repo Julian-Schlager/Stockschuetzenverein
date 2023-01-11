@@ -29,7 +29,7 @@
         <div class="d-flex">
             <!-- Calander -->
             <div class="p-2 flex-fill">
-                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
+                <%-- <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
                     ShowGridLines="True" Height="700px" Width="1350px">
 
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
@@ -38,7 +38,7 @@
                     <SelectedDayStyle BackColor="#CCCCCC" ForeColor="White" />
                     <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderStyle="None" />
                     <TodayDayStyle BackColor="#CCCCCC" />
-                </asp:Calendar>
+                </asp:Calendar>--%>
             </div>
             <!-- List of all entries in a month -->
             <div class="p-2 flex-fill">
@@ -85,9 +85,9 @@
                 </div>
             </div>
         </div>
-  
 
-        
+
+
     </form>
 </body>
 </html>
