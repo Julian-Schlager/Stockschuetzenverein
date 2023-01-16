@@ -18,7 +18,7 @@ namespace Stockschuetzenverein
 
         protected void Page_Load(object sender, EventArgs e)
         {
-                DateTime dateTime = DateTime.Parse(Request.QueryString["Date"]);
+                DateTime dateTime = DateTime.Parse(Request.QueryString["datum"]);
                 string sqlcmd = $"SELECT * FROM ssv_date WHERE DATE(DateFrom) LIKE '{dateTime.ToString("yyyy-MM-dd")}';";
                 DataTable dt = db.RunQuery(sqlcmd);
                 rblTermine.DataSource = dt;
