@@ -98,7 +98,7 @@ namespace Stockschuetzenverein
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
             // Hier bitte eine Pop Up für die 🦼
-            Response.Redirect("TerminDetailAnsicht.aspx");
+            Response.Redirect("TerminDetailAnsicht.aspx?test={JA}");
         }
 
 

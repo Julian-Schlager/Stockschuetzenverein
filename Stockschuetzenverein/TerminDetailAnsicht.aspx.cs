@@ -17,7 +17,7 @@ namespace Stockschuetzenverein
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txt_entryName.Text = Request.QueryString["test"];
         }
 
         protected void btn_home_Click(object sender, EventArgs e)
