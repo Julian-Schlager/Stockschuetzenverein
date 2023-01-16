@@ -98,7 +98,20 @@ namespace Stockschuetzenverein
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
             // Hier bitte eine Pop Up für die 🦼
-            Response.Redirect("TerminDetailAnsicht.aspx?test={JA}");
+           
+            string sql = $"SELECT COUNT(*) FROM ssv_date WHERE DateFrom = {calendar_1.Se}";
+            
+            int count = int.Parse((db.RunQueryScalar(sql).ToString()));
+
+
+
+            if (count != 0)
+            {
+                DateTime date = calendar_1.SelectedDate;
+                string dateShort = $"{date.Day}.{date.Month}.{date.Year}";
+                Response.Redirect($"TerminDetailAnsicht.aspx?datum={dateShort}");
+            }
+
         }
 
 
