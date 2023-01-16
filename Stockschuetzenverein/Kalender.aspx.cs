@@ -95,15 +95,14 @@ namespace Stockschuetzenverein
             }
         }
 
+        // ES FUNKTIONIERT, FINGER WEG Lugas ~ Kasti
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
             // Hier bitte eine Pop Up für die 🦼
-           
-            string sql = $"SELECT COUNT(*) FROM ssv_date WHERE DateFrom = {calendar_1.Se}";
+         
+            string sql = $"SELECT COUNT(*) FROM ssv_date WHERE DAY(Datefrom) = {calendar_1.SelectedDate.Day} AND MONTH(Datefrom) = {calendar_1.SelectedDate.Month} AND YEAR(Datefrom) = {calendar_1.SelectedDate.Year};";
             
             int count = int.Parse((db.RunQueryScalar(sql).ToString()));
-
-
 
             if (count != 0)
             {
