@@ -6,6 +6,7 @@
 <head runat="server">
     <!-- Import Stylesheets and Libaries -->
     <link rel="stylesheet" href="Design_Kalender.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -29,16 +30,7 @@
         <div class="d-flex">
             <!-- Calander -->
             <div class="p-2 flex-fill">
-                <%-- <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
-                    ShowGridLines="True" Height="700px" Width="1350px">
-
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
-                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" BorderStyle="None" />
-                    <OtherMonthDayStyle ForeColor="#999999" BorderStyle="None" />
-                    <SelectedDayStyle BackColor="#CCCCCC" ForeColor="White" />
-                    <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderStyle="None" />
-                    <TodayDayStyle BackColor="#CCCCCC" />
-                </asp:Calendar>--%>
+                
             </div>
             <!-- List of all entries in a month -->
             <div class="p-2 flex-fill">
