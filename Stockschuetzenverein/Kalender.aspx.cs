@@ -95,7 +95,11 @@ namespace Stockschuetzenverein
             }
         }
 
-
+        protected void calendar_1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Hier bitte eine Pop Up für die 🦼
+            Response.Redirect("TerminDetailAnsicht.aspx");
+        }
 
 
 
@@ -104,5 +108,7 @@ namespace Stockschuetzenverein
         {
             Response.Redirect("/Kalender.aspx");
         }
+
+       
     }
 }

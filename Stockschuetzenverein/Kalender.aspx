@@ -30,7 +30,7 @@
             <!-- Calander -->
             <div class="p-2 flex-fill">
                 <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
-                    ShowGridLines="True" Height="700px" Width="1350px">
+                    ShowGridLines="True" Height="700px" Width="1350px" OnSelectionChanged="calendar_1_SelectionChanged">
 
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" BorderStyle="None" />
