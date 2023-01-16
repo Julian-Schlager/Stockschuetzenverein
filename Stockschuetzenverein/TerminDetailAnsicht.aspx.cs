@@ -1,6 +1,7 @@
 ﻿using DataBaseWrapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -17,7 +18,17 @@ namespace Stockschuetzenverein
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            txt_entryName.Text = Request.QueryString["test"];
+                DateTime dateTime = DateTime.Parse(Request.QueryString["Date"]);
+                string sqlcmd = $"SELECT * FROM ssv_date WHERE DATE(DateFrom) LIKE '{dateTime.ToString("yyyy-MM-dd")}';";
+                DataTable dt = db.RunQuery(sqlcmd);
+                rblTermine.DataSource = dt;
+                rblTermine.DataValueField = dt.Columns[0].ColumnName;
+                rblTermine.DataBind();
+           for(int i = 0; i < rblTermine.Items.Count; i++)
+            {
+                rblTermine.Items[i].Text = $"{dt.Rows[i].ItemArray[1]} <br> {dt.Rows[i].ItemArray[2]} - {dt.Rows[i].ItemArray[3]} <br> {dt.Rows[i].ItemArray[4]}";
+            }
+            
         }
 
         protected void btn_home_Click(object sender, EventArgs e)
