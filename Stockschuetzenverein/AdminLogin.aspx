@@ -25,6 +25,8 @@
                     <div class="input-group mb-3">
                         <asp:TextBox ID="txt_password" runat="server"></asp:TextBox>
                     </div>
+                    <br />
+                    <asp:Button type="button" class="btn btn-primary" ID="btn_login" runat="server" Text="Login" />
                 </div>
             </div>
         </div>
