@@ -26,9 +26,17 @@ namespace Stockschuetzenverein
                 rblTermine.DataBind();
            for(int i = 0; i < rblTermine.Items.Count; i++)
             {
-                rblTermine.Items[i].Text = $"{dt.Rows[i].ItemArray[1]} <br> {dt.Rows[i].ItemArray[2]} - {dt.Rows[i].ItemArray[3]} <br> {dt.Rows[i].ItemArray[4]}";
+                DateTime dateFrom = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+                DateTime dateTo = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+                rblTermine.Items[i].Text = $"{dt.Rows[i].ItemArray[1]} <br/> {dateFrom.ToString("dd-MM-yyyy")} - {dateTo.ToString("dd-MM-yyyyy")} <br>" +
+                    $" {dateFrom.ToString("H:mm")} - {dateTo.ToString("H:mm")} <br/>{dt.Rows[i].ItemArray[4]} <br/> <br/>";
             }
             
+        }
+
+        protected void btn_editEntry_Click(object sender, EventArgs e)
+        {
+            string sqlcmd = $"SELECT * FROM ssv_date WHERE DateID = {rblTermine.SelectedValue};";
         }
 
         protected void btn_home_Click(object sender, EventArgs e)
