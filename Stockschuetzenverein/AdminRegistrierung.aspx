@@ -13,6 +13,28 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="w-100" style="background-color: #4771c4;">
+                    <div class="w-75" style="background-color: #ffffff;">
+                        <p class="h2">Admin Account Login</p>
+                        <br />
+                        <label>Username</label>
+                        <div class="input-group mb-3">
+                            <asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
+                        </div>
+                        <label>Passwort</label>
+                        <div class="input-group mb-3">
+                            <asp:TextBox ID="txt_password" runat="server"></asp:TextBox>
+                        </div>
+                        <label>Email</label>
+                        <div class="input-group mb-3">
+                            <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
+                        </div>
+                        <br />
+                        <asp:Button type="button" class="btn btn-primary" ID="btn_reg" runat="server" Text="Registrierung" />
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>
