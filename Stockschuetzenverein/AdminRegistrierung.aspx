@@ -16,7 +16,7 @@
             <div class="position-absolute top-50 start-50 translate-middle">
                 <div class="w-100" style="background-color: #4771c4;">
                     <div class="w-75" style="background-color: #ffffff;">
-                        <p class="h2">Admin Account Login</p>
+                        <p class="h2">Admin Account Registrierung</p>
                         <br />
                         <label>Username</label>
                         <div class="input-group mb-3">

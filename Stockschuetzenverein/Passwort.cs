@@ -7,15 +7,23 @@ namespace Stockschuetzenverein
 {
     public class Passwort
     {
-        string passwort;
-        public Passwort()
+        public static string Salten(string input)
         {
-            
+            string salt = "";
+
+
+
+            return salt;
         }
-        static string Salten(string Input)
+        
+        public static string Hashen(string input)
         {
+            string hash = "";
+
+
+
+            return hash;
 
         }
-      
     }
 }
