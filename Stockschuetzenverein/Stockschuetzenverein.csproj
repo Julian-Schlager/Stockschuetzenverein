@@ -70,6 +70,7 @@
     <Content Include="Design_TerminDetailAnsicht.css" />
     <Content Include="Kalender.aspx" />
     <Content Include="TerminDetailAnsicht.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="TerminDetailAnsicht.aspx.designer.cs">
       <DependentUpon>TerminDetailAnsicht.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
