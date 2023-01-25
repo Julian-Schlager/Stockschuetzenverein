@@ -23,13 +23,13 @@ namespace Stockschuetzenverein
             string username = txt_username.Text;
             string password = txt_password.Text;
             string email = txt_email.Text;            
-            bool isAdmin = true;
+            int isAdmin = 1;
             string salt = Passwort.CreateSalt();
             string hash = Passwort.CreatePasswordHash(password, salt);
 
             try
             {
-                string sql = $"INSERT INTO ssv_user (Username,Password,Salt,Email,IsAdmin) Values ('{username}','{hash}','{salt}','{email}','{isAdmin}')";
+                string sql = $"INSERT INTO ssv_user (Username,Password,Salt,Email,IsAdmin) VALUES ('{username}','{hash}','{salt}','{email}','{isAdmin}')";
                 db.RunQuery(sql);
             }
             catch (Exception ex)
