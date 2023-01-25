@@ -17,3 +17,15 @@ td{
 .Pfuschen{
      z-index: 5;
 }
+
+.RadioStyle {
+    box-sizing: border-box;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: 90% auto;
+    margin-left: 4%;
+}
+input[type="radio"] {
+    transform:translate(-200%,200%);
+    
+}

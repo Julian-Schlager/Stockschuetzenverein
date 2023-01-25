@@ -59,8 +59,11 @@
                 </div>
             </div>
         </div>
+        <div Class="RadioStyle">
         <asp:RadioButtonList ID="rblTermine" runat="server" RepeatLayout="Flow">
         </asp:RadioButtonList>
+        </div>
+       
     </form>
 </body>
 </html>
