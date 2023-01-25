@@ -13,5 +13,10 @@ namespace Stockschuetzenverein
         {
 
         }
+
+        protected void btn_reg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
