@@ -24,7 +24,7 @@
                         </div>
                         <label>Passwort</label>
                         <div class="input-group mb-3">
-                            <asp:TextBox ID="txt_password" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txt_password" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
                         <label>Email</label>
                         <div class="input-group mb-3">
