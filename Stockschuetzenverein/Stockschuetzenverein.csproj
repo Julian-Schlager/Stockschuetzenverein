@@ -94,6 +94,7 @@
     <Compile Include="Kalender.aspx.designer.cs">
       <DependentUpon>Kalender.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Passwort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerminDetailAnsicht.aspx.cs">
       <DependentUpon>TerminDetailAnsicht.aspx</DependentUpon>

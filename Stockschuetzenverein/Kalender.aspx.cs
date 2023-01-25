@@ -27,7 +27,8 @@ namespace Stockschuetzenverein
 
 
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
+         
             if (!IsPostBack)
             {
                 // Kalender erstellen und zum heutigen Datum einstellen
@@ -115,6 +116,8 @@ namespace Stockschuetzenverein
 
 
 
+
+
         // Home Button der theoritsch useless ist.
         protected void btn_homeButton_Click(object sender, EventArgs e)
         {
@@ -123,4 +126,5 @@ namespace Stockschuetzenverein
 
        
     }
+    
 }
