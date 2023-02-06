@@ -44,6 +44,7 @@ namespace Stockschuetzenverein
 
             if(username == list[1] && newHash == list[2])
             {
+                ViewState["isLoggedIn"] = true;
                 Response.Redirect("/Kalender.aspx");
             }
             else
