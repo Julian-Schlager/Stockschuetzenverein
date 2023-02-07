@@ -22,7 +22,7 @@
                     <ul class="navbar-nav ms-auto">
                         <asp:LinkButton CssClass="nav-item" ID="btn_addPictures" runat="server" ForeColor="White" CausesValidation="True"><i class="material-icons">photo</i></asp:LinkButton>
                         <asp:LinkButton CssClass="nav-item" ID="btn_editEntry" runat="server" ForeColor="White" OnClick="btn_editEntry_Click" UseSubmitBehavior="false" ><i class="material-icons">edit</i></asp:LinkButton>
-                        <asp:LinkButton CssClass="nav-item" ID="btn_deleteEntry" runat="server" ForeColor="White"><i class="material-icons">delete</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item" ID="btn_deleteEntry" runat="server" ForeColor="White" OnClick="btn_deleteEntry_Click"><i class="material-icons">delete</i></asp:LinkButton>
                     </ul>
                 </div>
             </div>
@@ -59,8 +59,8 @@
                 </div>
             </div>
         </div>
-        <div Class="RadioStyle">
-        <asp:RadioButtonList ID="rblTermine" runat="server" RepeatLayout="Flow">
+        <div  Class="RadioStyle">
+        <asp:RadioButtonList ID="rblTermine" runat="server" RepeatLayout="Flow"  >
         </asp:RadioButtonList>
         </div>
        

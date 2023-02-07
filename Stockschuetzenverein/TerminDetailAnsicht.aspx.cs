@@ -31,6 +31,7 @@ namespace Stockschuetzenverein
                 rblTermine.Items[i].Text = $"{dt.Rows[i].ItemArray[1]} <br/> {dateFrom.ToString("dd-MM-yyyy")} - {dateTo.ToString("dd-MM-yyyyy")} <br>" +
                     $" {dateFrom.ToString("H:mm")} - {dateTo.ToString("H:mm")} <br/>{dt.Rows[i].ItemArray[4]} <br/> <br/>";
             }
+           // Den ersten Index als True setzten
             
         }
 
@@ -49,5 +50,17 @@ namespace Stockschuetzenverein
             string sqlCmd = "";
             db.RunNonQuery(sqlCmd);
         }
+
+        protected void btn_deleteEntry_Click(object sender, EventArgs e)
+        {
+
+            if (rblTermine.SelectedIndex != -1)
+            {
+                string sqlcmd = $"DELETE FROM ssv_date WHERE DateID = {rblTermine.SelectedValue}";
+                db.RunNonQuery(sqlcmd);
+            }
+        }
+
+       
     }
 }
