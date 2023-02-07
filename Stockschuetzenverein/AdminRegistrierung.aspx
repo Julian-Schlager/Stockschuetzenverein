@@ -31,6 +31,8 @@
                             <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
                         </div>
                         <br />
+                        <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="false"></asp:Label>
+                        <br />
                         <asp:Button type="button" class="btn btn-primary" ID="btn_reg" runat="server" Text="Registrierung" OnClick="btn_reg_Click" />
                     </div>
                 </div>

@@ -21,7 +21,7 @@
                     <asp:LinkButton ID="btn_home" runat="server" class="btn btn-outline-light">SSV</asp:LinkButton></a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <asp:LinkButton CssClass="nav-item" ID="btn_addEntry" runat="server" ForeColor="White" CausesValidation="True" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">add</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item" ID="btn_addEntry" Enabled="false" runat="server" ForeColor="White" CausesValidation="True" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">add</i></asp:LinkButton>
                     </ul>
                 </div>
             </div>

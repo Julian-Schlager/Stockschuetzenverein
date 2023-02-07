@@ -26,7 +26,9 @@
                         <asp:TextBox ID="txt_password" runat="server"></asp:TextBox>
                     </div>
                     <br />
-                    <asp:Button type="button" class="btn btn-primary" ID="btn_login" runat="server" Text="Login" />
+                        <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="false"></asp:Label>
+                        <br />
+                    <asp:Button type="button" class="btn btn-primary" ID="btn_login" runat="server" OnClick="btn_login_Click" Text="Login" />
                 </div>
             </div>
         </div>

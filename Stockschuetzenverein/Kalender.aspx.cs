@@ -35,6 +35,10 @@ namespace Stockschuetzenverein
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 calendar_1.SelectedDate = DateTime.Today;
                 FillTable(calendar_1.SelectedDate);
+                if((bool)ViewState["isLoggedIn"] == true)
+                {
+                    btn_addEntry.Enabled = true;
+                }
             }
             // Tabelle füllen bei jeden Postback weil sonst die Tabelle verschwindet
             else FillTable(Convert.ToDateTime(ViewState["date"]));

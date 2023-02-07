@@ -18,21 +18,26 @@ namespace Stockschuetzenverein
 
         protected void Page_Load(object sender, EventArgs e)
         {
-                DateTime dateTime = DateTime.Parse(Request.QueryString["datum"]);
-                string sqlcmd = $"SELECT * FROM ssv_date WHERE DATE(DateFrom) LIKE '{dateTime.ToString("yyyy-MM-dd")}';";
-                DataTable dt = db.RunQuery(sqlcmd);
-                rblTermine.DataSource = dt;
-                rblTermine.DataValueField = dt.Columns[0].ColumnName;
-                rblTermine.DataBind();
-           for(int i = 0; i < rblTermine.Items.Count; i++)
+            DateTime dateTime = DateTime.Parse(Request.QueryString["datum"]);
+            string sqlcmd = $"SELECT * FROM ssv_date WHERE DATE(DateFrom) LIKE '{dateTime.ToString("yyyy-MM-dd")}';";
+            DataTable dt = db.RunQuery(sqlcmd);
+            rblTermine.DataSource = dt;
+            rblTermine.DataValueField = dt.Columns[0].ColumnName;
+            rblTermine.DataBind();
+            for (int i = 0; i < rblTermine.Items.Count; i++)
             {
                 DateTime dateFrom = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
                 DateTime dateTo = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
                 rblTermine.Items[i].Text = $"{dt.Rows[i].ItemArray[1]} <br/> {dateFrom.ToString("dd-MM-yyyy")} - {dateTo.ToString("dd-MM-yyyyy")} <br>" +
                     $" {dateFrom.ToString("H:mm")} - {dateTo.ToString("H:mm")} <br/>{dt.Rows[i].ItemArray[4]} <br/> <br/>";
             }
-           // Den ersten Index als True setzten
-            
+            if ((bool)ViewState["isLoggedIn"] == true)
+            {
+                btn_addPictures.Enabled = true;
+                btn_deleteEntry.Enabled = true;
+                btn_editEntry.Enabled = true;
+            }
+
         }
 
         protected void btn_editEntry_Click(object sender, EventArgs e)
