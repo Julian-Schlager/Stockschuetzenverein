@@ -14,9 +14,10 @@
     <form id="form1" runat="server">
         <div>
             <div class="position-absolute top-50 start-50 translate-middle">
-                <div class="w-100" style="background-color: #4771c4;">
-                    <div class="w-75" style="background-color: #ffffff;">
-                        <p class="h2">Admin Account Registrierung</p>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col text-left">
+                             <p class="h2">Admin Account Registrierung</p>
                         <br />
                         <label>Username</label>
                         <div class="input-group mb-3">
@@ -34,8 +35,13 @@
                         <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="false"></asp:Label>
                         <br />
                         <asp:Button type="button" class="btn btn-primary" ID="btn_reg" runat="server" Text="Registrierung" OnClick="btn_reg_Click" />
+                        </div>
+                        <div class="col-3 bg-primary">
+                            
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </form>

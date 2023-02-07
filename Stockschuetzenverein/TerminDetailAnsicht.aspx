@@ -20,9 +20,9 @@
                     <asp:LinkButton ID="btn_home" runat="server" class="btn btn-outline-light" OnClick="btn_home_Click">SSV</asp:LinkButton></a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <asp:LinkButton CssClass="nav-item" ID="btn_addPictures" Enabled="false" runat="server" ForeColor="White" CausesValidation="True"><i class="material-icons">photo</i></asp:LinkButton>
-                        <asp:LinkButton CssClass="nav-item" ID="btn_editEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_editEntry_Click" UseSubmitBehavior="false" ><i class="material-icons">edit</i></asp:LinkButton>
-                        <asp:LinkButton CssClass="nav-item" ID="btn_deleteEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_deleteEntry_Click"><i class="material-icons">delete</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item me-2" ID="btn_addPictures" Enabled="false" runat="server" ForeColor="White" CausesValidation="True"><i class="material-icons">photo</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item me-2" ID="btn_editEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_editEntry_Click" UseSubmitBehavior="false"><i class="material-icons">edit</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item me-2" ID="btn_deleteEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_deleteEntry_Click"><i class="material-icons">delete</i></asp:LinkButton>
                     </ul>
                 </div>
             </div>
@@ -54,16 +54,16 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <asp:Button ID="btn_saveChanges" runat="server" Text="Save changes" type="button" class="btn btn-primary" OnClick="btn_saveChanges_Click" data-bs-dismiss="modal"/>
+                        <asp:Button ID="btn_saveChanges" runat="server" Text="Save changes" type="button" class="btn btn-primary" OnClick="btn_saveChanges_Click" data-bs-dismiss="modal" />
                     </div>
                 </div>
             </div>
         </div>
-        <div  Class="RadioStyle">
-        <asp:RadioButtonList ID="rblTermine" runat="server" RepeatLayout="Flow"  >
-        </asp:RadioButtonList>
+        <div class="RadioStyle">
+            <asp:RadioButtonList ID="rblTermine" runat="server" RepeatLayout="Flow">
+            </asp:RadioButtonList>
         </div>
-       
+
     </form>
 </body>
 </html>

@@ -12,7 +12,7 @@ namespace Stockschuetzenverein
 {
     public partial class AdminRegistrierung : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["docker"].ConnectionString;
         DataBase db = new DataBase(connStrg);
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace Stockschuetzenverein
         {
             string username = txt_username.Text;
             string password = txt_password.Text;
-            string email = txt_email.Text;            
+            string email = txt_email.Text;       
             int isAdmin = 1;
             string salt = Passwort.CreateSalt();
             string hash = Passwort.CreatePasswordHash(password, salt);

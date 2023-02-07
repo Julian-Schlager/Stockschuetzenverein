@@ -20,7 +20,7 @@ namespace Stockschuetzenverein
     public partial class Kalender : System.Web.UI.Page
     {
         // Datenbankdaten, alles auf mein Nacken Jungs - Lugas
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["Docker"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
 
@@ -35,7 +35,7 @@ namespace Stockschuetzenverein
                 System.Web.UI.WebControls.Calendar calendar = new System.Web.UI.WebControls.Calendar();
                 calendar_1.SelectedDate = DateTime.Today;
                 FillTable(calendar_1.SelectedDate);
-                if((bool)ViewState["isLoggedIn"] == true)
+                if (UserManager.IsLoggedIn)
                 {
                     btn_addEntry.Enabled = true;
                 }

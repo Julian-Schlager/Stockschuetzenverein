@@ -27,22 +27,21 @@
             </div>
         </nav>
 
-        <div class="d-flex">
+        <div class="d-flex justify-content-center" >
             <!-- Calander -->
-            <div class="p-2 flex-fill">
-                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
+            <div class="p-2 me-5">
+                <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="16px" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
                     ShowGridLines="True" Height="700px" Width="1350px" OnSelectionChanged="calendar_1_SelectionChanged">
-
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" BorderStyle="None" />
-                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" BorderStyle="None" />
+                    <DayHeaderStyle Font-Bold="True" Font-Size="12pt" BorderStyle="None"/>
+                    <NextPrevStyle Font-Bold="True" Font-Size="14pt" ForeColor="#ffffff" VerticalAlign="Middle" Font-Underline="false" CssClass="calendarButton" BackColor="#0d6efd"/>
                     <OtherMonthDayStyle ForeColor="#999999" BorderStyle="None" />
-                    <SelectedDayStyle BackColor="#CCCCCC" ForeColor="White" />
-                    <TitleStyle BackColor="White" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" BorderStyle="None" />
+                    <SelectedDayStyle BackColor="#0d6efd" ForeColor="White" />
+                    <TitleStyle BackColor="White" Font-Bold="True" Font-Size="20pt" ForeColor="#0d6efd" BorderStyle="None" />
                     <TodayDayStyle BackColor="#CCCCCC" />
                 </asp:Calendar>
             </div>
             <!-- List of all entries in a month -->
-            <div class="p-2 flex-fill">
+            <div class="pt-5 m-5 align-self-center">
                 <asp:Table ID="tbl_entries" runat="server" class="table">
                     <asp:TableHeaderRow runat="server">
                         <asp:TableHeaderCell Scope="Column" runat="server">Name</asp:TableHeaderCell>

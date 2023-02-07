@@ -12,7 +12,7 @@ namespace Stockschuetzenverein
 {
     public partial class AdminLogin : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["docker"].ConnectionString;
         DataBase db = new DataBase(connStrg);
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +44,8 @@ namespace Stockschuetzenverein
 
             if(username == list[1] && newHash == list[2])
             {
-                ViewState["isLoggedIn"] = true;
+                UserManager.IsLoggedIn = true;
+                UserManager.UserName = username;
                 Response.Redirect("/Kalender.aspx");
             }
             else

@@ -12,24 +12,31 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <div class="w-100" style="background-color: #4771c4;">
-                <div class="w-75" style="background-color: #ffffff;">
-                    <p class="h2">Admin Account Login</p>
-                    <br />
-                    <label>Username</label>
-                    <div class="input-group mb-3">
-                        <asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
+        <div>
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col text-left">
+                            <p class="h2">Admin Account Login</p>
+                            <br />
+                            <label>Username</label>
+                            <div class="input-group mb-3">
+                                <asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
+                            </div>
+                            <label>Passwort</label>
+                            <div class="input-group mb-3">
+                                <asp:TextBox ID="txt_password" runat="server" TextMode="Password"></asp:TextBox>
+                            </div>
+                            <br />
+                            <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="false"></asp:Label>
+                            <br />
+                            <asp:Button type="button" class="btn btn-primary" ID="btn_reg" runat="server" Text="Login" OnClick="btn_login_Click" />
+                        </div>
+                        <div class="col-3 bg-primary">
+                        </div>
                     </div>
-                    <label>Passwort</label>
-                    <div class="input-group mb-3">
-                        <asp:TextBox ID="txt_password" runat="server"></asp:TextBox>
-                    </div>
-                    <br />
-                        <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="false"></asp:Label>
-                        <br />
-                    <asp:Button type="button" class="btn btn-primary" ID="btn_login" runat="server" OnClick="btn_login_Click" Text="Login" />
                 </div>
+
             </div>
         </div>
     </form>

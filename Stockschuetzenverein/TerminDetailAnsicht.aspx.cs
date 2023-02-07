@@ -12,7 +12,7 @@ namespace Stockschuetzenverein
 {
     public partial class TerminDetailAnsicht : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["Docker"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
 
