@@ -12,7 +12,7 @@ namespace Stockschuetzenverein
 {
     public partial class AdminRegistrierung : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["docker"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
         protected void Page_Load(object sender, EventArgs e)
         {

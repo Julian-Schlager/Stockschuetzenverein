@@ -12,7 +12,7 @@ namespace Stockschuetzenverein
 {
     public partial class TerminDetailAnsicht : System.Web.UI.Page
     {
-        static string connStrg = WebConfigurationManager.ConnectionStrings["Docker"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
 
@@ -31,13 +31,14 @@ namespace Stockschuetzenverein
                 rblTermine.Items[i].Text = $"{dt.Rows[i].ItemArray[1]} <br/> {dateFrom.ToString("dd-MM-yyyy")} - {dateTo.ToString("dd-MM-yyyyy")} <br>" +
                     $" {dateFrom.ToString("H:mm")} - {dateTo.ToString("H:mm")} <br/>{dt.Rows[i].ItemArray[4]} <br/> <br/>";
             }
-            if ((bool)ViewState["isLoggedIn"] == true)
+            if (UserManager.IsLoggedIn)
             {
                 btn_addPictures.Enabled = true;
                 btn_deleteEntry.Enabled = true;
                 btn_editEntry.Enabled = true;
             }
-
+            if (UserManager.IsLoggedIn) btn_logInOut.Text = "Logout";
+            else if (UserManager.IsLoggedIn == false) btn_logInOut.Text = "Login";
         }
 
         protected void btn_editEntry_Click(object sender, EventArgs e)
@@ -66,6 +67,17 @@ namespace Stockschuetzenverein
             }
         }
 
-       
+        protected void btn_logInOut_Click(object sender, EventArgs e)
+        {
+            if (UserManager.IsLoggedIn)
+            {
+                UserManager.IsLoggedIn = false;
+                Response.Redirect("/Kalender.aspx");
+            }
+            else if (UserManager.IsLoggedIn == false)
+            {
+                Response.Redirect("/AdminLogin.aspx");
+            }
+        }
     }
 }

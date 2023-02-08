@@ -33,6 +33,15 @@ namespace Stockschuetzenverein
         protected global::System.Web.UI.WebControls.LinkButton btn_home;
 
         /// <summary>
+        /// btn_logInOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_logInOut;
+
+        /// <summary>
         /// btn_addEntry control.
         /// </summary>
         /// <remarks>

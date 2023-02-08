@@ -20,7 +20,7 @@ namespace Stockschuetzenverein
     public partial class Kalender : System.Web.UI.Page
     {
         // Datenbankdaten, alles auf mein Nacken Jungs - Lugas
-        static string connStrg = WebConfigurationManager.ConnectionStrings["Docker"].ConnectionString;
+        static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
 
@@ -42,6 +42,9 @@ namespace Stockschuetzenverein
             }
             // Tabelle füllen bei jeden Postback weil sonst die Tabelle verschwindet
             else FillTable(Convert.ToDateTime(ViewState["date"]));
+
+            if (UserManager.IsLoggedIn) btn_logInOut.Text = "Logout";
+            else if (UserManager.IsLoggedIn == false) btn_logInOut.Text = "Login";
         }
 
 
@@ -128,7 +131,18 @@ namespace Stockschuetzenverein
             Response.Redirect("/Kalender.aspx");
         }
 
-       
+        protected void btn_logInOut_Click(object sender, EventArgs e)
+        {
+            if(UserManager.IsLoggedIn)
+            {
+                UserManager.IsLoggedIn = false;
+                Response.Redirect("/Kalender.aspx");
+            }
+            else if(UserManager.IsLoggedIn == false)
+            {
+                Response.Redirect("/AdminLogin.aspx");
+            }
+        }
     }
     
 }
