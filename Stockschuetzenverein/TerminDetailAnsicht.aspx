@@ -17,14 +17,14 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#page-top">
-                    <asp:LinkButton ID="btn_home" runat="server" class="btn btn-dark" OnClick="btn_home_Click"><i class="material-icons">Home</i>SSV</asp:LinkButton>
+                    <asp:LinkButton ID="btn_home" runat="server" class="btn btn-dark" OnClick="btn_home_Click"><i class="material-icons fs-3">home</i></asp:LinkButton>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <asp:Button ID="btn_logInOut" runat="server" Text="" OnClick="btn_logInOut_Click" />
-                        <asp:LinkButton CssClass="nav-item me-2" ID="btn_addPictures" Enabled="false" runat="server" ForeColor="White" CausesValidation="True"><i class="material-icons">photo</i></asp:LinkButton>
-                        <asp:LinkButton CssClass="nav-item me-2" ID="btn_editEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_editEntry_Click" UseSubmitBehavior="false"><i class="material-icons">edit</i></asp:LinkButton>
-                        <asp:LinkButton CssClass="nav-item me-2" ID="btn_deleteEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_deleteEntry_Click"><i class="material-icons">delete</i></asp:LinkButton>
+                        <asp:Button ID="btn_logInOut" runat="server" Text="" class="btn btn-dark fs-5 me-3" OnClick="btn_logInOut_Click" />
+                        <asp:LinkButton CssClass="nav-item me-2 mt-2" ID="btn_addPictures" Enabled="false" runat="server" ForeColor="White" CausesValidation="True"><i class="material-icons">photo</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item me-2 mt-2" ID="btn_editEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_editEntry_Click" UseSubmitBehavior="false"><i class="material-icons">edit</i></asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-item me-2 mt-2" ID="btn_deleteEntry" Enabled="false" runat="server" ForeColor="White" OnClick="btn_deleteEntry_Click"><i class="material-icons">delete</i></asp:LinkButton>
                     </ul>
                 </div>
             </div>

@@ -18,11 +18,12 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#page-top">
-                    <asp:LinkButton ID="btn_home" runat="server" class="btn btn-outline-light">SSV</asp:LinkButton></a>
+                    <asp:LinkButton ID="btn_home" runat="server" class="btn btn-dark"><i class="material-icons fs-3">home</i></asp:LinkButton>
+                </a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <asp:Button ID="btn_logInOut" runat="server" Text="" OnClick="btn_logInOut_Click"/>
-                        <asp:LinkButton CssClass="nav-item" ID="btn_addEntry" Enabled="false" runat="server" ForeColor="White" CausesValidation="True" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">add</i></asp:LinkButton>
+                        <asp:Button ID="btn_logInOut" runat="server" Text="" class="btn btn-dark fs-5 me-3" OnClick="btn_logInOut_Click"/>
+                        <asp:LinkButton CssClass="nav-item me-3 mt-2" ID="btn_addEntry" Enabled="false" Visible="false" runat="server" ForeColor="White" CausesValidation="True" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons">add</i></asp:LinkButton>
                     </ul>
                 </div>
             </div>
@@ -34,7 +35,7 @@
                 <asp:Calendar ID="calendar_1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="16px" ForeColor="Black" NextPrevFormat="FullMonth" OnVisibleMonthChanged="calendar_1_VisibleMonthChanged" EnableTheming="True" BorderWidth="1px"
                     ShowGridLines="True" Height="700px" Width="1350px" OnSelectionChanged="calendar_1_SelectionChanged">
                     <DayHeaderStyle Font-Bold="True" Font-Size="12pt" BorderStyle="None"/>
-                    <NextPrevStyle Font-Bold="True" Font-Size="14pt" ForeColor="#ffffff" VerticalAlign="Middle" Font-Underline="false" CssClass="calendarButton" BackColor="#0d6efd"/>
+                    <NextPrevStyle Font-Bold="True" Font-Size="14pt" ForeColor="#ffffff" VerticalAlign="Middle" HorizontalAlign="Center" Font-Underline="false" CssClass="calendarButton" BackColor="#0d6efd"/>
                     <OtherMonthDayStyle ForeColor="#999999" BorderStyle="None" />
                     <SelectedDayStyle BackColor="#0d6efd" ForeColor="White" />
                     <TitleStyle BackColor="White" Font-Bold="True" Font-Size="20pt" ForeColor="#0d6efd" BorderStyle="None" />

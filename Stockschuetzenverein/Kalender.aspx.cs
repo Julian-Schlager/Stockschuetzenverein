@@ -38,6 +38,7 @@ namespace Stockschuetzenverein
                 if (UserManager.IsLoggedIn)
                 {
                     btn_addEntry.Enabled = true;
+                    btn_addEntry.Visible = true;
                 }
             }
             // Tabelle füllen bei jeden Postback weil sonst die Tabelle verschwindet
