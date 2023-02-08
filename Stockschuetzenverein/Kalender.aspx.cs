@@ -19,7 +19,7 @@ namespace Stockschuetzenverein
 {
     public partial class Kalender : System.Web.UI.Page
     {
-        // Datenbankdaten, alles auf mein Nacken Jungs - Lugas
+        
         static string connStrg = WebConfigurationManager.ConnectionStrings["AppDbInt"].ConnectionString;
         //string connStrg = WebConfigurationManager.ConnectionStrings["AppDbExt"].ConnectionString;
         DataBase db = new DataBase(connStrg);
@@ -71,7 +71,7 @@ namespace Stockschuetzenverein
         }
 
 
-        // Tabelle die rechts neben den Kalnder ist ne, ja die aufüllen und den Datum speichern damit .... schau einfach bei PageLoad
+        // Tabelle die rechts neben den Kalender sind
         private void FillTable(DateTime date)
         {
             ViewState["date"] = date;
@@ -105,10 +105,9 @@ namespace Stockschuetzenverein
         }
 
         // ES FUNKTIONIERT, FINGER WEG Lugas ~ Kasti
-        // NIEMALS - LUGAS
+        // NIEMALS - LUKAS
         protected void calendar_1_SelectionChanged(object sender, EventArgs e)
         {
-            // Hier bitte eine Pop Up für die 🦼
             string sql = $"SELECT COUNT(*) FROM ssv_date WHERE DATE(DateFrom) LIKE '{calendar_1.SelectedDate.ToString("yyyy-MM-dd")}';";
             
             int count = int.Parse((db.RunQueryScalar(sql).ToString()));
@@ -126,7 +125,7 @@ namespace Stockschuetzenverein
 
 
 
-        // Home Button der theoritsch useless ist.
+        // Home Button der theoritsch nicht nötig ist.
         protected void btn_homeButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Kalender.aspx");
